@@ -1,4 +1,7 @@
 import abibe from "./assets/abibe.jpg"
+import perpetuo from "./assets/perpetuo.jpg"
+import divino from "./assets/divino.jpeg"
+
 
 export function Destaque({ img, titulo, descricao}) {
     return (
@@ -19,6 +22,10 @@ export default function Home() {
     "titulo": "Bazar Perpétuo Socorro",
     "descricao": "Rua Ivo Leão, 220"
     }
+    const destaque3 = {
+    "titulo": "Bazar Divino Espírito Santo",
+    "descricao": "R. Mateus Leme, 1855 - Bom Retiro, Curitiba - PR, 80520-174"
+    }
     return (
         <>
             <div className="w-full h-screen flex flex-col bg-red-400">
@@ -27,10 +34,11 @@ export default function Home() {
                     <h1 className="text-4xl text-white">MEU BAZAR CWB</h1>
                 </div>
 
-                <div className="h-1/2 w-full flex items-center justify-center gap-5 cursor-pointer">
+                <div className="flex justify-center items-center text-2xl"><h2>Destaques</h2></div>
+                <div className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer">
                     <Destaque img={abibe} titulo={destaque1.titulo} descricao={destaque1.descricao}/>
-                    <Destaque img={abibe} titulo="Bazar Da Perpétuo" />
-                    <Destaque img={abibe} titulo="Bazar do Divino" />
+                    <Destaque img={perpetuo} titulo={destaque2.titulo}  descricao={destaque2.descricao}/>
+                    <Destaque img={adivino} titulo={destaque3.titulo} descricao={destaque3.descricao} />
                 </div>
 
             </div>
