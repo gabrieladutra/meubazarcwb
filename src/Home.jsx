@@ -1,6 +1,7 @@
 import abibe from "./assets/abibe.jpg"
 import perpetuo from "./assets/perpetuo.jpg"
 import divino from "./assets/divino.jpeg"
+import { useNavigate } from "react-router-dom"
 
 
 export function Destaque({ img, titulo, descricao }) {
@@ -14,6 +15,7 @@ export function Destaque({ img, titulo, descricao }) {
 }
 
 export default function Home() {
+    const navigate = useNavigate()
     const destaque1 = {
         "titulo": "Bazar Abibe Isfer",
         "descricao": "Alameda Cabral, 275 - Centro, Curitiba - PR, 80410-210"
@@ -35,13 +37,14 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center items-center text-2xl"><h2>Destaques</h2></div>
-                <div className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer">
-                    <Destaque img={abibe} titulo={destaque1.titulo} descricao={destaque1.descricao} />
+                <div  onClick={() => navigate("/bazar/")} className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer">
+                    <Destaque  img={abibe} titulo={destaque1.titulo} descricao={destaque1.descricao} />
                     <Destaque img={perpetuo} titulo={destaque2.titulo} descricao={destaque2.descricao} />
                     <Destaque img={divino} titulo={destaque3.titulo} descricao={destaque3.descricao} />
                 </div>
                 <div className="flex justify-center">
-                    <button className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer mt-5 md:mb-8 md:mt-10 md:w-60 md:justify-center md:text-lg">
+                    <button onClick={() => navigate("/bazares/")}
+                    className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer mt-5 md:mb-8 md:mt-10 md:w-60 md:justify-center md:text-lg">
                     Veja Mais
                 </button>
 
