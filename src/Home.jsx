@@ -2,6 +2,7 @@ import abibe from "./assets/abibe.jpg"
 import perpetuo from "./assets/perpetuo.jpg"
 import divino from "./assets/divino.jpeg"
 import { useNavigate } from "react-router-dom"
+import listaDeBazares from "./Bazares"
 
 
 export function Destaque({ img, titulo, descricao }) {
@@ -13,6 +14,7 @@ export function Destaque({ img, titulo, descricao }) {
         </div>
     )
 }
+
 
 export default function Home() {
     const navigate = useNavigate()
