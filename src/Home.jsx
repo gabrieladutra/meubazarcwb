@@ -1,5 +1,5 @@
-import abibe from "./assets/abibe.jpg"
-import perpetuo from "./assets/perpetuo.jpg"
+import abibe from "./assets/ceai.jpg"
+import perpetuo from "./assets/perpetuo.png"
 import divino from "./assets/divino.jpeg"
 import { useNavigate } from "react-router-dom"
 import listaDeBazares from "./Bazares"
