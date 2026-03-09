@@ -1,5 +1,9 @@
 import abasc from "./assets/abasc.png"
 import { useNavigate } from "react-router-dom"
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { useState } from "react";
+import { galeria } from "./galeria";
 
 export function Informacoes({ bazar, img }) {
     return (
@@ -17,6 +21,8 @@ export function Informacoes({ bazar, img }) {
 }
 export default function Bazar() {
     const navigate = useNavigate()
+    const [listaFotos, setListaDeFotos] = useState(galeria)
+
     const bazar = {
         titulo: "Bazar da Abasc",
         endereco: "Alameda Cabral 47",
