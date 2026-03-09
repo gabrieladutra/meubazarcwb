@@ -14,8 +14,6 @@ import perpetuo from "./assets/perpetuo.png"
 import renal from "./assets/renal.png"
 import santissimo from "./assets/santissimo.jpg"
 
-import galeria from "./galeria"
-
 export const bazares = [
   {
     id: 1,
