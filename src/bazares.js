@@ -3,7 +3,7 @@ import abasc from "./assets/abasc.png"
 import adfp from "./assets/adfp.png"
 import acridas from "./assets/acridas.jpg"
 import apae from "./assets/apae.jpg"
-import cacamba from "./assets/cacamba.jpg"
+import afece from "./assets/afece.png"
 import caritas from "./assets/caritas.jpg"
 import ceefa from "./assets/ceefa.png"
 import amizade from "./assets/amizade.png"
@@ -19,7 +19,7 @@ import socorro from "./assets/socorro1.jpg"
 import provopar from "./assets/provopar.jpg"
 import solidario from "./assets/solidario.jpg"
 import moises from "./assets/moises.png"
-import adfp from "./assets/adfp.png"
+import alcance from "./assets/alcance.png"
 import saoroque from "./assets/saoroque.jpeg"
 
 
@@ -69,9 +69,9 @@ export const bazares = [
   },
   {
     id: 8,
-    titulo: "Caçamba do Bem",
-    descricao: "Avenida Manoel Ribas, 2658 - Mercês",
-    img: cacamba
+    titulo: "Bazar da Associação Franciscana de Apoio ao Cidadão",
+    descricao: "R. Paulo Turkiewicz, 316 - Tarumã",
+    img: afece
   },
   {
     id: 9,
@@ -147,20 +147,20 @@ export const bazares = [
     img: moises
   },
   {
-    id: 20,
+    id: 21,
     titulo: "Bazar Alcance Social",
     descricao: "Avenida República Argentina, 4985 - Novo Mundo",
-    img: socorro
+    img: alcance
   },
   {
-    id: 21,
+    id: 22,
     titulo: "Bazar Associação São Roque",
     descricao: "Rua Nicarágua, 2128 – Bacacheri",
     img: saoroque
   },
   {
-    id: 22,
-    titulo: "Bazar Associação dos Deficiente Físicos do Paraná (ADFP)",
+    id: 23,
+    titulo: "Bazar Associação dos Deficiente Físicos do Paraná",
     descricao: "R. XV de Novembro, 2765 - Alto da XV,",
     img: adfp
   },
