@@ -15,9 +15,12 @@ import maos from "./assets/maos.jpg"
 import perpetuo from "./assets/perpetuo.png"
 import renal from "./assets/renal.png"
 import santissimo from "./assets/santissimo.jpg"
-import socorro from "./assets/socorro.jpg"
+import socorro from "./assets/socorro1.jpg"
 import provopar from "./assets/provopar.jpg"
 import solidario from "./assets/solidario.jpg"
+import moises from "./assets/moises.png"
+import adfp from "./assets/adfp.png"
+import saoroque from "./assets/saoroque.jpeg"
 
 
 export const bazares = [
@@ -141,7 +144,7 @@ export const bazares = [
     id: 20,
     titulo: "Bazar Lar Moisés",
     descricao: "Rua da Trindade, 1686 – Cajuru",
-    img: socorro
+    img: moises
   },
   {
     id: 20,
@@ -153,12 +156,12 @@ export const bazares = [
     id: 21,
     titulo: "Bazar Associação São Roque",
     descricao: "Rua Nicarágua, 2128 – Bacacheri",
-    img: socorro
+    img: saoroque
   },
   {
     id: 22,
     titulo: "Bazar Associação dos Deficiente Físicos do Paraná (ADFP)",
     descricao: "R. XV de Novembro, 2765 - Alto da XV,",
-    img: socorro
+    img: adfp
   },
 ]
