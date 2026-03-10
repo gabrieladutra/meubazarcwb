@@ -2,6 +2,7 @@ import { useState } from "react"
 import { bazares } from "./bazares.js"
 import { Destaque } from "./Home"
 import { useNavigate } from "react-router-dom"
+import { MoveLeft } from "lucide-react"
 
 export default function Bazares() {
     const navigate = useNavigate()
@@ -13,6 +14,7 @@ export default function Bazares() {
             <div>
                 <button onClick={() => navigate("/")}
                     className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer md:w-60 md:justify-center md:text-lg">
+                        <MoveLeft size={28}/>
                     Voltar
                 </button>
                 <h1 className="text-3xl text-red-400">
