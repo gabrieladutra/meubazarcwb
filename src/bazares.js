@@ -22,7 +22,7 @@ export const bazares = [
   {
     id: 1,
     titulo: "Bazar Abibe Isfer",
-    descricao: "Alameda Cabral, 275 - Centro, Curitiba - PR",
+    descricao: "Alameda Cabral, 275 - Centro",
     img: ceai
   },
   {
@@ -34,7 +34,7 @@ export const bazares = [
   {
     id: 3,
     titulo: "Bazar Divino Espírito Santo",
-    descricao: "Rua Mateus Leme, 1855 - Bom Retiro, Curitiba - PR",
+    descricao: "Rua Mateus Leme, 1855 - Bom Retiro",
     img: divino
   },
   {
