@@ -70,7 +70,7 @@ export const bazares = [
   },
   {
     id: 9,
-    titulo: "Bazar ABASC/PIB",
+    titulo: "Bazar ABASC (Transformar)",
     descricao: " Rua Bento Viana, 1200 - Batel",
     img: abasc
   },
@@ -96,7 +96,7 @@ export const bazares = [
   {
     id: 13,
     titulo: "Bazar Amigos do HC",
-    descricao: "Rua São Francisco, 126 – Centro",
+    descricao: "Avenida Agostinho Leão Junior, 336 - Alto da Glória",
     img: hc
   },
   {

@@ -3,6 +3,7 @@ import ps2 from "./carrossel/perpetuo/ps2.jpeg"
 import ps3 from "./carrossel/perpetuo/ps3.jpeg"
 import ps4 from "./carrossel/perpetuo/ps4.jpg"
 import ps5 from "./carrossel/perpetuo/ps5.jpg"
+import ab1 from "./carrossel/abasc/ab1.png"
 export const galeria = [
   {
     id: 1,
@@ -25,8 +26,13 @@ export const galeria = [
     img: ps4
   },
   {
-    id: 4,
+    id: 5,
     bazar: "perpetuo",
     img: ps5
+  },
+  {
+    id: 6,
+    bazar: "abasc",
+    img: ab1
   },
 ]
