@@ -2,7 +2,7 @@ import { useState } from "react"
 import { bazares } from "./bazares.js"
 import { Destaque } from "./Home"
 import { useNavigate } from "react-router-dom"
-import { MoveLeft } from "lucide-react"
+import { Search, MoveLeft } from "lucide-react"
 
 export default function Bazares() {
     const navigate = useNavigate()
@@ -17,13 +17,13 @@ export default function Bazares() {
                         <MoveLeft size={28}/>
                     Voltar
                 </button>
-                <h1 className="text-3xl text-red-400">
+                <h1 className="text-3xl text-red-400 flex justify-center">
                     Todos os Bazares
                 </h1>
             </div>
 
-            <div>
-                <input type="text" className="h-10 w-20" onChange={(event) => {
+            <div className="flex flex-row ">
+                <input type="text" placeholder="Pesquise" className="h-10 w-100 border border-red-400 focus:border-red-600 focus:outline-none" onChange={(event) => {
                     console.log("Evento: ", event.target.value)
                     const listaDeBazaresPesquisada = bazares.filter((bazar) => {
                         function removeAccents(str) {
@@ -36,6 +36,7 @@ export default function Bazares() {
                 }}>
 
                 </input>
+                <Search size={28} color="#ff6467" />
             </div>
 
             <div className="flex flex-wrap gap-6 cursor-pointer" onClick={() => navigate("/bazar/")}>

@@ -7,7 +7,7 @@ import { MoveLeft } from "lucide-react"
 
 export function Destaque({ img, titulo, descricao }) {
     return (
-        <div className="h-80 w-64 border border-red-400 text-black p-2">
+        <div className="h-80 w-64 border border-red-400 rounded-lg focus:outline-4 text-black p-2">
             <img src={img} alt={titulo} className="h-[200px] w-full object-cover" />
             <h3 className="text-red-400">{titulo}</h3>
             <p>{descricao}</p>
