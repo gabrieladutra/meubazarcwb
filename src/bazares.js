@@ -1,5 +1,6 @@
 import ceai from "./assets/ceai.jpg"
 import abasc from "./assets/abasc.png"
+import adfp from "./assets/adfp.png"
 import acridas from "./assets/acridas.jpg"
 import apae from "./assets/apae.jpg"
 import cacamba from "./assets/cacamba.jpg"
@@ -10,11 +11,12 @@ import divino from "./assets/divino.jpg"
 import genesis from "./assets/genesis.jpg"
 import guardalupe from "./assets/guardalupe.png"
 import hc from "./assets/hc.png"
+import maos from "./assets/maos.jpg"
 import perpetuo from "./assets/perpetuo.png"
 import renal from "./assets/renal.png"
 import santissimo from "./assets/santissimo.jpg"
+import socorro from "./assets/socorro.jpg"
 import provopar from "./assets/provopar.jpg"
-import maos from "./assets/maos.jpg"
 import solidario from "./assets/solidario.jpg"
 
 
@@ -129,5 +131,34 @@ export const bazares = [
     descricao: "Rua Gabriel Frecceiro de Miranda, 621 – Xaxim",
     img: solidario
   },
-  
+  {
+    id: 19,
+    titulo: "Bazar Socorro aos Necessitados",
+    descricao: "Rua Konrad Adenauer, 576 – Tarumã",
+    img: socorro
+  },
+  {
+    id: 20,
+    titulo: "Bazar Lar Moisés",
+    descricao: "Rua da Trindade, 1686 – Cajuru",
+    img: socorro
+  },
+  {
+    id: 20,
+    titulo: "Bazar Alcance Social",
+    descricao: "Avenida República Argentina, 4985 - Novo Mundo",
+    img: socorro
+  },
+  {
+    id: 21,
+    titulo: "Bazar Associação São Roque",
+    descricao: "Rua Nicarágua, 2128 – Bacacheri",
+    img: socorro
+  },
+  {
+    id: 22,
+    titulo: "Bazar Associação dos Deficiente Físicos do Paraná (ADFP)",
+    descricao: "R. XV de Novembro, 2765 - Alto da XV,",
+    img: socorro
+  },
 ]
