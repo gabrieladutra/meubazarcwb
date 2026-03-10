@@ -9,21 +9,21 @@ export default function Bazares() {
     const [listaDeBazares, setListaDeBazares] = useState(bazares)
 
     return (
-        <div className="min-h-screen pt-5 pl-5">
+        <div className="min-h-screen pt-3 pl-5 flex flex-col gap-5">
 
-            <div>
+            <div className="flex flex-row gap-20">
                 <button onClick={() => navigate("/")}
-                    className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer md:w-60 md:justify-center md:text-lg">
+                    className="bg-red-400 text-white h-11  flex items-center gap-2 cursor-pointer md:w-60 md:justify-center md:text-lg">
                         <MoveLeft size={28}/>
                     Voltar
                 </button>
-                <h1 className="text-3xl text-red-400 flex justify-center">
+                <h1 className="text-3xl text-red-400 ml-120">
                     Todos os Bazares
                 </h1>
             </div>
 
-            <div className="flex flex-row ">
-                <input type="text" placeholder="Pesquise" className="h-10 w-100 border border-red-400 focus:border-red-600 focus:outline-none" onChange={(event) => {
+            <div className="flex flex-row justify-center pt-5">
+                <input type="text" placeholder="Pesquise" className="h-10 w-100 border border-red-400 rounded-lg flex text-center focus:border-red-600 focus:outline-none" onChange={(event) => {
                     console.log("Evento: ", event.target.value)
                     const listaDeBazaresPesquisada = bazares.filter((bazar) => {
                         function removeAccents(str) {
@@ -39,7 +39,7 @@ export default function Bazares() {
                 <Search size={28} color="#ff6467" />
             </div>
 
-            <div className="flex flex-wrap gap-6 cursor-pointer" onClick={() => navigate("/bazar/")}>
+            <div className="flex flex-wrap gap-6 cursor-pointer mt-5 ml-10" onClick={() => navigate("/bazar/")}>
                 {listaDeBazares.map((bazar) => (
                     <Destaque
                         key={bazar.id}
