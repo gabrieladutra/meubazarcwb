@@ -52,6 +52,7 @@ export default function Home() {
                 </button>
 
                 </div>
+                <footer className="bg-red-400 h-5'"></footer>
                 
             </div>
         </>
