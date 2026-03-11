@@ -34,19 +34,19 @@ export default function Home() {
         <>
             <div className="w-full h-screen flex flex-col">
 
-                <div className="h-1/2 flex items-center justify-center">
+                <div className="h-1/3 flex items-center justify-center">
                     <h1 className="text-4xl text-red-400 text-semibold">MEU BAZAR CWB</h1>
                 </div>
 
-                <div className="flex justify-center items-center text-2xl"><h2>Destaques</h2></div>
-                <div  onClick={() => navigate("/bazar/")} className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer">
+                <div className="flex justify-center items-center text-2xl mt-0 pb-5"><h2>Destaques</h2></div>
+                <div  onClick={() => navigate("/bazar/")} className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5''">
                     <Destaque  img={abibe} titulo={destaque1.titulo} descricao={destaque1.descricao} />
                     <Destaque img={perpetuo} titulo={destaque2.titulo} descricao={destaque2.descricao} />
                     <Destaque img={divino} titulo={destaque3.titulo} descricao={destaque3.descricao} />
                 </div>
                 <div className="flex justify-center">
                     <button onClick={() => navigate("/bazares/")}
-                    className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer mt-5 md:mb-8 md:mt-10 md:w-60 md:justify-center md:text-lg">
+                    className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer mt-5 md:mb-8 md:mt-10 md:w-60 md:justify-center md:text-lg mmt-5">
                     Veja Mais
                 </button>
 
