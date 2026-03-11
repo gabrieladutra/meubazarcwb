@@ -7,7 +7,7 @@ import { MoveLeft } from "lucide-react"
 
 export function Destaque({ img, titulo, descricao }) {
     return (
-        <div className="h-85 w-68 px-2 shadow-xl/30 shadow-grey-100/30 ring-8 ring-red-400/10 rounded-lg focus:outline-4 text-black p-2 flex flex-col items-center justify-center">
+        <div className="h-85 w-68 px-2 shadow-xl/30 shadow-grey-100/30 ring-8 ring-red-400/10 rounded-lg focus:outline-4 transition-transform duration-300 transform hover:-translate-y-6 text-black p-2 flex flex-col items-center justify-center">
             <img src={img} alt={titulo} className="h-[200px] w-full object-cover" />
             <h3 className="text-red-400">{titulo}</h3>
             <p>{descricao}</p>
