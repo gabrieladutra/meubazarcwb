@@ -34,8 +34,9 @@ export default function Home() {
         <>
             <div className="w-full h-screen flex flex-col">
 
-                <div className="h-1/3 flex items-center justify-center">
-                    <h1 className="text-4xl text-red-400 text-semibold">MEU BAZAR CWB</h1>
+                <div className="h-1/3 flex flex-col items-center justify-center text-red-400">
+                    <h1 className="text-4xl  text-semibold">MEU BAZAR CWB</h1>
+                    <p>Lista Completa de Bazares de Curitiba </p>
                 </div>
 
                 <div className="flex justify-center items-center text-2xl mt-0 pb-5"><h2>Destaques</h2></div>
