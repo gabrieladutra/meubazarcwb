@@ -8,7 +8,6 @@ import caritas from "./assets/caritas.jpg"
 import ceefa from "./assets/ceefa.png"
 import amizade from "./assets/amizade.png"
 import divino from "./assets/divino.jpg"
-import genesis from "./assets/genesis.jpg"
 import guardalupe from "./assets/guardalupe.png"
 import hc from "./assets/hc.png"
 import maos from "./assets/maos.jpg"
@@ -121,12 +120,6 @@ export const bazares = [
     titulo: "Bazar PROVOPAR",
     descricao: "Rua Hermes Fontes, 315 - Batel ",
     img: provopar
-  },
-   {
-    id: 17,
-    titulo: "Bazar Missão Gênesis",
-    descricao: "Rua São Francisco, 126 – Centro",
-    img: genesis
   },
   {
     id: 18,
