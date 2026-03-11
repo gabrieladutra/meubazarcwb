@@ -7,8 +7,8 @@ import Bazares from "./Bazares"
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-     <Route path="/bazar/" element={<Bazar />} />
+     <Route path="/" element={<Home />} />
+     <Route path="/bazar/:id" element={<Bazar />} />
      <Route path="/bazares/" element={<Bazares />} />
     </Routes>
   );

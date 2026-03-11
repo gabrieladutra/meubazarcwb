@@ -1,9 +1,10 @@
-import abasc from "./assets/abasc.png"
 import { useNavigate } from "react-router-dom"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import { useState } from "react"
 import { galeria } from "./galeria"
+import { useParams } from "react-router-dom"
+import { bazares } from "./bazares"
 import { MoveLeft } from "lucide-react"
 
 export function Informacoes({ bazar, img, fotos }) {
@@ -23,6 +24,7 @@ export function Informacoes({ bazar, img, fotos }) {
     }
   }
 
+
   return (
     <div className="text-2xl flex flex-col items-center gap-8">
 
@@ -37,7 +39,7 @@ export function Informacoes({ bazar, img, fotos }) {
       </h2>
 
       <ul className="text-xl text-center">
-        <li><strong>Endereço:</strong> {bazar.endereco}</li>
+        <li><strong>Endereço:</strong> {bazar.descricao}</li>
         <li><strong>Horários:</strong> {bazar.horarios}</li>
         <li><strong>Contatos:</strong> {bazar.contatos}</li>
       </ul>
@@ -61,12 +63,11 @@ export function Informacoes({ bazar, img, fotos }) {
           {fotos.map((foto, index) => (
             <div key={index} className="flex justify-center">
               <img
-                src={foto.img}
+                src={foto}
                 alt={`foto-${index}`}
                 className="h-[250px] w-full max-w-[400px] object-cover rounded-lg shadow-lg"
               />
-            </div>
-          ))}
+            </div>))}
         </Carousel>
 
       </div>
@@ -77,13 +78,16 @@ export function Informacoes({ bazar, img, fotos }) {
 export default function Bazar() {
 
   const navigate = useNavigate()
-  const [listaFotos] = useState(galeria)
+  const parametros = useParams()
 
-  const bazar = {
-    titulo: "Bazar da Abasc",
-    endereco: "Alameda Cabral 47",
-    horarios: "Seg a sex das 9 às 17",
-    contatos: "11977317756"
+  const idConvertido = Number(parametros.id)
+
+  const bazar = bazares.find(function (bazarAtual) {
+    return bazarAtual.id === idConvertido
+  })
+
+  if (!bazar) {
+    return <h1>Bazar não encontrado</h1>
   }
 
   return (
@@ -94,15 +98,14 @@ export default function Bazar() {
           onClick={() => navigate("/bazares")}
           className="bg-red-400 text-white h-11 px-6  gap-2 flex items-center cursor-pointer rounded-md hover:bg-red-500 transition text-center"
         >
-         <MoveLeft size={28}/>
+          <MoveLeft size={28} />
           Voltar
         </button>
       </div>
-
       <Informacoes
         bazar={bazar}
-        img={abasc}
-        fotos={listaFotos}
+        img={bazar.img}
+        fotos={bazar.fotos}
       />
 
     </div>

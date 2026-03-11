@@ -14,7 +14,7 @@ export default function Bazares() {
             <div className="flex flex-row gap-20">
                 <button onClick={() => navigate("/")}
                     className="bg-red-400 text-white h-11  flex items-center gap-2 cursor-pointer md:w-60 md:justify-center md:text-lg">
-                        <MoveLeft size={28}/>
+                    <MoveLeft size={28} />
                     Voltar
                 </button>
                 <h1 className="text-3xl text-red-400 ml-120">
@@ -39,14 +39,15 @@ export default function Bazares() {
                 <Search size={28} color="#ff6467" />
             </div>
 
-            <div className="flex flex-wrap gap-6 cursor-pointer mt-5 ml-10" onClick={() => navigate("/bazar/")}>
+            <div className="flex flex-wrap gap-6 cursor-pointer mt-5 ml-10">
                 {listaDeBazares.map((bazar) => (
-                    <Destaque
-                        key={bazar.id}
-                        img={bazar.img}
-                        titulo={bazar.titulo}
-                        descricao={bazar.descricao}
-                    />
+                    <div key={bazar.id} onClick={() => navigate(`/bazar/${bazar.id}`)}>
+                        <Destaque
+                            img={bazar.img}
+                            titulo={bazar.titulo}
+                            descricao={bazar.descricao}
+                        />
+                    </div>
                 ))}
             </div>
 
