@@ -13,9 +13,9 @@ export default function Bazares() {
     }
 
     return (
-        <div className="min-h-screen pt-3 pl-5 flex flex-col gap-5">
+        <div className="min-h-screen pt-3 pl-5 flex flex-col gap-5 focus:flex-none focus:fixed focus:overflow-hidden">
 
-            <div className="flex items-center justify-between pr-10">
+            <div className="flex items-center justify-between pr-10 ">
                 <button
                     onClick={() => navigate("/")}
                     className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer md:w-60 md:justify-center md:text-lg rounded"
@@ -24,14 +24,13 @@ export default function Bazares() {
                     Voltar
                 </button>
 
-                <h1 className="text-3xl text-red-400">
+                <h1 className="text-3xl text-red-400 flex items-right flex-none">
                     Todos os Bazares
                 </h1>
             </div>
 
-            {/* Barra de pesquisa */}
-            <div className="flex justify-center pt-5">
-                <div className="relative">
+            <div className="flex justify-center pt-5 focus:overflow-hidden">
+                <div>
 
                     <input
                         type="text"
@@ -59,7 +58,7 @@ export default function Bazares() {
                 </div>
             </div>
 
-            <div className="flex flex-wrap gap-6 cursor-pointer mt-5 ml-10">
+            <div className="flex flex-wrap gap-6 cursor-pointer mt-5 ml-10 focus:flex-none focus:fixed">
                 {listaDeBazares.map((bazar) => (
                     <div
                         key={bazar.id}
