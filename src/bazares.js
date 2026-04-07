@@ -104,13 +104,19 @@ export const bazares = [
     titulo: "Bazar do Santíssimo",
     descricao: "Rua Leôncio Correia, 381 - Água Verde",
     img: santissimo,
+    horarios: "Ás terças e quintas-feiras, das 14h às 18h, e no 2º sábado de cada mês, a partir das 8h",
+    contatos: "(41) 9324-2556",
+    saibaMais: "https://www.instagram.com/bazardosantissimo/",
     fotos: carregarGaleria("santissimo")
   },
   {
     id: 8,
-    titulo: "Bazar da Associação Franciscana de Apoio ao Cidadão (AFACE)",
+    titulo: "Bazar da Associação Franciscana de Apoio ao Cidadão (AFECE)",
     descricao: "R. Paulo Turkiewicz, 316 - Tarumã",
     img: afece,
+    horarios:" De terça à sexta-feira das 10h as 16h - Almoço das 13h às 14h",
+    contatos: "(41) 3366-5212",
+    saibaMais:"https://afece.org.br/bazar/",
     fotos: carregarGaleria("afece")
   },
   {
