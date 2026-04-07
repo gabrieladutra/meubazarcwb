@@ -121,9 +121,12 @@ export const bazares = [
   },
   {
     id: 9,
-    titulo: "Bazar Transforma (ABASC/PIB)",
+    titulo: "Bazar Transformar (ABASC/PIB)",
     descricao: " Rua Bento Viana, 1200 - Batel",
     img: abasc,
+    horarios: "De quarta á sexta-feira das 9h às 15h e sábado das 10h às 13h",
+    contatos:"(41) 99825-0600",
+    saibaMais: "https://www.instagram.com/bazar.transformar/",
     fotos: carregarGaleria("abasc")
   },
   {
@@ -131,6 +134,9 @@ export const bazares = [
     titulo: "Bazar APAE Curitiba",
     descricao: "Avenida Nossa Senhora da Paz, 1041 - Boqueirão",
     img: apae,
+     horarios: "Segunda, quarta e sexta-feira das 9h às 16h",
+    contatos:"(41) 99266-5857",
+    saibaMais: "https://www.instagram.com/bazarapaecuritiba/",
     fotos: carregarGaleria("apae")
   },
   {
@@ -138,12 +144,16 @@ export const bazares = [
     titulo: "Bazar Mãos que Valen",
     descricao: "Rua Paulo Gorski,1356 - Mossunguê",
     img: maos,
+     horarios: "De segunda a sexta-feira das 9h30 às 17h30 Sábado das 10h às 15h",
+    contatos:"(41) 9915-3616",
+    saibaMais: "https://www.instagram.com/bazar.transformar/",
     fotos: carregarGaleria("maos")
   },
   {
     id: 12,
     titulo: "Bazar da Amizade - Pequeno Cotolengo",
     descricao: "Rua José Gonçalves Júnior, 140, Campo Comprido",
+    horarios: "De segunda a sábado, das 8h30 às 11h30. No segundo sábado do mês, "\n" +nocorre um bazar especial com horário estendido até às 13h ou 15h",''
     img: amizade,
     fotos: carregarGaleria("amizade")
   },
@@ -217,5 +227,10 @@ export const bazares = [
     descricao: "R. XV de Novembro, 2765 - Alto da XV,",
     img: adfp,
     fotos: carregarGaleria("adfp")
+  },
+   {
+    id: 24,
+    titulo: "Bazar Missão Gênesis",
+    descricao: "Rua São Francisco",
   },
 ]
