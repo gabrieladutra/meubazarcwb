@@ -1,5 +1,5 @@
 import ceai from "./assets/ceai.jpg"
-import abasc from "./assets/abasc.png"
+import abasc from "./assets/abasc.jpg"
 import adfp from "./assets/adfp.png"
 import acridas from "./assets/acridas.jpg"
 import apae from "./assets/apae.jpg"
@@ -41,9 +41,12 @@ function carregarGaleria(pasta) {
 export const bazares = [
   {
     id: 1,
-    titulo: "Bazar Amigos do HC",
+    titulo: "Bazar Desapega Amigos do HC",
     descricao: "Avenida Agostinho Leão Junior, 336 - Alto da Glória",
     img: hc,
+    horarios: "De segunda á sexta-feira, das 9h às 17h.",
+    contatos: "(41) 98713-6516",
+    saibaMais: "https://www.amigosdohc.org.br/loja-2/",
     fotos: carregarGaleria("hc")
   },
   {
@@ -51,6 +54,9 @@ export const bazares = [
     titulo: "Bazar Perpétuo Socorro",
     descricao: "Rua Ivo Leão, 220 - Alto da Glória",
     img: perpetuo,
+    horarios: "Ás quartas-feiras, das 8h às 17h ",
+    contatos: "(41) 3253-2031",
+    saibaMais: "https://www.perpetuosocorro.org.br/pagina/bazar",
     fotos: carregarGaleria("perpetuo")
   },
   {
@@ -58,6 +64,9 @@ export const bazares = [
     titulo: "Bazar Divino Espírito Santo",
     descricao: "Rua Mateus Leme, 1855 - Bom Retiro",
     img: divino,
+    horarios: "Aos sábados das 8h às 12h",
+    contatos: "41) 3121-1754",
+    saibaMais: "https://www.facebook.com/pdescuritiba/",
     fotos: carregarGaleria("divino")
   },
   {
@@ -65,6 +74,9 @@ export const bazares = [
     titulo: "Bazar da Cáritas",
     descricao: "Avenida Marechal Floriano Peixoto, 8520 - Boqueirão",
     img: caritas,
+    horarios: "Organizado em datas esporádicas geralmente sextas e sábados das 9h às 17h",
+    contatos: "(41) 3039-7869",
+    saibaMais: "https://www.instagram.com/caritaspr/",
     fotos: carregarGaleria("caritas")
   },
   {
@@ -72,6 +84,9 @@ export const bazares = [
     titulo: "Bazar Solidário Acridas",
     descricao: "Rua Eduardo Geronasso, 1782 - Bacacheri",
     img: acridas,
+    horarios: "De segunda á sexta-feira das 9h às 11h30 e das 13h às 15h30.",
+    contatos: "(41) 98835-5238",
+    saibaMais: "https://www.instagram.com/acridasoficial/",
     fotos: carregarGaleria("acridas")
   },
   {
@@ -79,6 +94,9 @@ export const bazares = [
     titulo: "Bazar Santuário Nosa Sra. de Guardalupe",
     descricao: "Praça Senador Correia, 128 - Centro",
     img: guardalupe,
+    horarios:"De segunda á sexta-feira das 9h30 ás 16h",
+    contatos: "(41) 3233-4884",
+    saibaMais: "https://santuarioguadalupe.com.br/secretaria/avisos-do-santuario/",
     fotos: carregarGaleria("guardalupe")
   },
   {
@@ -97,7 +115,7 @@ export const bazares = [
   },
   {
     id: 9,
-    titulo: "Bazar ABASC (Transformar)",
+    titulo: "Bazar Transforma (ABASC/PIB)",
     descricao: " Rua Bento Viana, 1200 - Batel",
     img: abasc,
     fotos: carregarGaleria("abasc")

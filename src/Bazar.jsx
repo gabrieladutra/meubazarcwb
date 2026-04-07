@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"
 import { bazares } from "./bazares"
 import { MoveLeft } from "lucide-react"
 
-export function Informacoes({ bazar, img, fotos }) {
+export function Informacoes({ bazar, img, fotos, saibaMais }) {
 
   const responsive = {
     desktop: {
@@ -37,11 +37,17 @@ export function Informacoes({ bazar, img, fotos }) {
         {bazar.titulo}
       </h2>
 
-      <ul className="text-xl text-center">
+      <ul className="text-xl text-left">
         <li><strong>Endereço:</strong> {bazar.descricao}</li>
         <li><strong>Horários:</strong> {bazar.horarios}</li>
         <li><strong>Contatos:</strong> {bazar.contatos}</li>
       </ul>
+          <button
+            onClick={() => window.open(saibaMais, "_blank")}
+            className="text-red-400 text-base px-4 py-1 rounded-md hover:border-2 border-red-400 transition cursor-pointer"
+          >
+            Saiba Mais
+          </button>
 
       <div className="w-full max-w-2xl">
         <h2 className="text-2xl mb-4 text-center">Galeria de Fotos</h2>
@@ -105,6 +111,7 @@ export default function Bazar() {
         bazar={bazar}
         img={bazar.img}
         fotos={bazar.fotos}
+        saibaMais={bazar.saibaMais}
       />
 
     </div>
