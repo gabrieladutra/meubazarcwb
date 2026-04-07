@@ -2,8 +2,6 @@ import abibe from "./assets/ceai.jpg"
 import perpetuo from "./assets/perpetuo.png"
 import divino from "./assets/divino.jpeg"
 import { useNavigate } from "react-router-dom"
-import { MoveLeft } from "lucide-react"
-
 
 export function Destaque({ img, titulo, descricao }) {
     return (
@@ -14,7 +12,6 @@ export function Destaque({ img, titulo, descricao }) {
         </div>
     )
 }
-
 
 export default function Home() {
     const navigate = useNavigate()
@@ -40,20 +37,20 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center items-center text-2xl mt-0 pb-5"><h2>Destaques</h2></div>
-                <div  onClick={() => navigate("/bazar/")} className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5''">
-                    <Destaque  img={abibe} titulo={destaque1.titulo} descricao={destaque1.descricao} />
+                <div onClick={() => navigate("/bazar/")} className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5''">
+                    <Destaque img={abibe} titulo={destaque1.titulo} descricao={destaque1.descricao} />
                     <Destaque img={perpetuo} titulo={destaque2.titulo} descricao={destaque2.descricao} />
                     <Destaque img={divino} titulo={destaque3.titulo} descricao={destaque3.descricao} />
                 </div>
                 <div className="flex justify-center">
                     <button onClick={() => navigate("/bazares/")}
-                    className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer mt-5 md:mb-8 md:mt-10 md:w-60 md:justify-center md:text-lg mmt-5">
-                    Veja Mais
-                </button>
+                        className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer mt-5 md:mb-8 md:mt-10 md:w-60 md:justify-center md:text-lg mmt-5">
+                        Veja Mais
+                    </button>
 
                 </div>
                 <footer className="bg-red-400 h-5'"></footer>
-                
+
             </div>
         </>
     )
