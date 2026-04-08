@@ -4,19 +4,21 @@ import adfp from "./assets/adfp.png"
 import acridas from "./assets/acridas.jpg"
 import apae from "./assets/apae.jpg"
 import afece from "./assets/afece.png"
+import amizade from "./assets/amizade.png"
 import caritas from "./assets/caritas.jpg"
 import ceefa from "./assets/ceefa.png"
-import amizade from "./assets/amizade.png"
+import cabide from "./assets/cabide.jpg"
 import divino from "./assets/divino.jpg"
 import guardalupe from "./assets/guardalupe.png"
 import hc from "./assets/hc.png"
 import maos from "./assets/maos.jpg"
 import perpetuo from "./assets/perpetuo.png"
-import renal from "./assets/renal.png"
+import renal from "./assets/renal.jpg"
 import santissimo from "./assets/santissimo.jpg"
 import socorro from "./assets/socorro1.jpg"
 import provopar from "./assets/provopar.jpg"
 import solidario from "./assets/solidario.jpg"
+import nina from "./assets/nina.jpg"
 import moises from "./assets/moises.png"
 import alcance from "./assets/alcance.png"
 import saoroque from "./assets/saoroque.jpeg"
@@ -134,7 +136,7 @@ export const bazares = [
     titulo: "Bazar APAE Curitiba",
     descricao: "Avenida Nossa Senhora da Paz, 1041 - Boqueirão",
     img: apae,
-     horarios: "Segunda, quarta e sexta-feira das 9h às 16h",
+    horarios: "Segunda, quarta e sexta-feira das 9h às 16h",
     contatos:"(41) 99266-5857",
     saibaMais: "https://www.instagram.com/bazarapaecuritiba/",
     fotos: carregarGaleria("apae")
@@ -151,10 +153,12 @@ export const bazares = [
   },
   {
     id: 12,
-    titulo: "Bazar da Amizade - Pequeno Cotolengo",
+    titulo: "Bazar da Amizade - Hospital Pequeno Cotolengo",
     descricao: "Rua José Gonçalves Júnior, 140, Campo Comprido",
-    horarios: "De segunda a sábado, das 8h30 às 11h30. No segundo sábado do mês, "\n" +nocorre um bazar especial com horário estendido até às 13h ou 15h",''
     img: amizade,
+    horarios: "De segunda a sábado, das 8h30 às 11h30. 2° Sábado do mês tem bazar especial com horário estendido até às 13h",
+    contatos: "(41) 3314-1900",
+    saibaMais: "https://www.pequenocotolengo.org.br/bazar-da-amizade/",
     fotos: carregarGaleria("amizade")
   },
 
@@ -163,6 +167,9 @@ export const bazares = [
     titulo: "Bazar Abibe Isfer",
     descricao: "Alameda Cabral, 275 - Centro",
     img: ceai,
+    horarios: "Consultar diretamente no telefone do CEAI",
+    contatos: " (41) 99506-0013",
+    saibaMais: "https://www.instagram.com/abibeisfer/",
     fotos: carregarGaleria("ceai")
   },
   {
@@ -170,6 +177,9 @@ export const bazares = [
     titulo: "Bazar CEEFA",
     descricao: "Rua Prefeito Ângelo Ferrário Lopes , 1260 - Alto da XV",
     img: ceefa,
+    horarios: "Consultar diretamente no telefone da CEEFA",
+    contatos:"(41) 3264-2167",
+    saibaMais: "https://www.ceefa.org.br/bazar-solidario-doacao.html",
     fotos: carregarGaleria("ceefa")
   },
   {
@@ -177,20 +187,29 @@ export const bazares = [
     titulo: "Bazar da Pró-Renal",
     descricao: "Avenida Vicente Machado, 2190 - Batel",
     img: renal,
-    fotos: carregarGaleria("renal")
+    horarios:"De segunda à sexta das 8h às 17h",
+    contatos: "(41) 3312-5415",
+    saibaMais:"https://www.instagram.com/bazarprorenal/",
+    fotos: carregarGaleria("prorenal")
   },
   {
     id: 16,
     titulo: "Bazar PROVOPAR",
     descricao: "Rua Hermes Fontes, 315 - Batel ",
     img: provopar,
+    horarios:"De segunda a sexta-feira, das 10h às 17h",
+    contatos:"(41) 99540-3998",
+    saibaMais: "https://www.instagram.com/provopar.oficial/",
     fotos: carregarGaleria("provopar")
   },
   {
     id: 18,
-    titulo: "Bazar Grupo Solidário",
+    titulo: "Bazar Instituto Grupo Solidário",
     descricao: "Rua Gabriel Frecceiro de Miranda, 621 – Xaxim",
     img: solidario,
+    horarios: "Consultar data e horário diretamente no instagram do Instituto",
+    contatos: "(41) 99751-2828",
+    saibaMais: "https://www.instagram.com/institutogruposolidario/",
     fotos: carregarGaleria("solidario")
   },
   {
@@ -205,13 +224,19 @@ export const bazares = [
     titulo: "Bazar Lar Moisés",
     descricao: "Rua da Trindade, 1686 – Cajuru",
     img: moises,
+    horarios: "Acontece a cada 15 dias das 8h as 12h.",
+    contatos: "(41) 3256-5587 / (41) 99125-0559 / (41) 99176-0112",
+    saibaMais: "https://larmoises.org/bazar/",
     fotos: carregarGaleria("moises")
   },
   {
     id: 21,
-    titulo: "Bazar Alcance Social",
-    descricao: "Avenida República Argentina, 4985 - Novo Mundo",
+    titulo: "Achadinhos do Bazar Alcance Social",
+    descricao: "Rua Tenente Miguel Afonso Ribeiro Cubas 210 - Capão Raso",
     img: alcance,
+    horarios: "De segunda à sexta das 9h às 17h. Consulte data  e local do Mega Bazar",
+    contatos: "(41) 99131-5925",
+    saibaMais: "https://www.instagram.com/achadinhos.dobazar/",
     fotos: carregarGaleria("alcance")
   },
   {
@@ -219,6 +244,7 @@ export const bazares = [
     titulo: "Bazar Associação São Roque",
     descricao: "Rua Nicarágua, 2128 – Bacacheri",
     img: saoroque,
+    saibaMais
     fotos: carregarGaleria("saoroque")
   },
   {
@@ -230,7 +256,24 @@ export const bazares = [
   },
    {
     id: 24,
-    titulo: "Bazar Missão Gênesis",
-    descricao: "Rua São Francisco",
+    titulo: "Bazar Cabide Solidário",
+    img: cabide,
+    descricao: "Rua General Carneiro, 06 - Alto da Glória",
+    horarios: "Todas as quartas das 9h às 17h.",
+    contatos:"(41)8457-2267",
+    saibaMais: "https://www.instagram.com/cabidesolidario.itmo/",
+    fotos: carregarGaleria("cabide")
+
+  },
+   {
+    id: 25,
+    titulo: "Bazar Nina APACN",
+    img: nina,
+    descricao: "Rua Ubaldino do Amaral, 22 - Alto da Glória",
+    horarios: "De segunda à sexta das 9h às 17h30.",
+    contatos:"11",
+    saibaMais: "https://www.instagram.com/bazarninaapacn/",
+    fotos: carregarGaleria("nina")
+
   },
 ]
