@@ -217,6 +217,8 @@ export const bazares = [
     titulo: "Bazar Socorro aos Necessitados",
     descricao: "Rua Konrad Adenauer, 576 – Tarumã",
     img: socorro,
+    horarios: "De terça a sexta-feira, das 9:30h às 15:30h.",
+    contatos: "(41) 98898-2483",
     fotos: carregarGaleria("socorro")
   },
   {
@@ -244,13 +246,18 @@ export const bazares = [
     titulo: "Bazar Associação São Roque",
     descricao: "Rua Nicarágua, 2128 – Bacacheri",
     img: saoroque,
-    saibaMais
+    horarios: "Ás terças e quintas-feiras das 08h30 ás 11h30 e das 13h30 ás 16h30",
+    contatos:"(41) 99224-6944",
+    saibaMais:"https://www.instagram.com/bazarsaoroque/",
     fotos: carregarGaleria("saoroque")
   },
   {
     id: 23,
     titulo: "Bazar Associação dos Deficiente Físicos do Paraná",
     descricao: "R. XV de Novembro, 2765 - Alto da XV,",
+    horarios: "De segunda á sexta das 8h ás 17h",
+    contatos: "adfp@adfp.org.br",
+    saibaMais:"https://adfp.org.br/",
     img: adfp,
     fotos: carregarGaleria("adfp")
   },
