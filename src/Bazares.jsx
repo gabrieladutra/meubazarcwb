@@ -29,13 +29,13 @@ export default function Bazares() {
                 </h1>
             </div>
 
-            <div className="flex justify-center pt-5 focus:overflow-hidden">
-                <div>
+            <div className="flex flex-row justify-center pt-5 focus:overflow-hidden">
 
+                <div>
                     <input
                         type="text"
                         placeholder="Pesquise"
-                        className="h-10 w-100 border border-red-400 rounded-lg text-center focus:border-red-600 focus:outline-none pr-10"
+                        className="h-10 w-100 border border-red-400 rounded-lg text-center focus:border-red-600 focus:outline-none pr-10 mr-3"
                         onChange={(event) => {
 
                             const valorBusca = removeAccents(event.target.value.toLowerCase())
@@ -48,13 +48,12 @@ export default function Bazares() {
                             setListaDeBazares(listaDeBazaresPesquisada)
                         }}
                     />
-
+                </div>
+                <div className="pt-2">
                     <Search
-                        size={20}
+                        size={22}
                         color="#ff6467"
-                        className="absolute right-3 top-1/2 -translate-y-1/2"
                     />
-
                 </div>
             </div>
 
