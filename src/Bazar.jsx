@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { bazares } from "./bazares"
 import { MoveLeft } from "lucide-react"
@@ -65,7 +64,7 @@ export function Informacoes({ bazar }) {
           containerClass="w-full"
           itemClass="px-2"
         >
-          {bazar.fotos.map((foto, index) => (
+          {bazar.fotos?.map((foto, index) => (
             <div key={index} className="flex justify-center">
               <img
                 src={foto}

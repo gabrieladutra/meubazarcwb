@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
-import Bazar from "./Bazar"
+import Bazar, { Informacoes } from "./Bazar"
 import Bazares from "./Bazares"
 
 
@@ -9,9 +9,7 @@ export default function App() {
     <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/bazar/:id" element={<Bazar />} />
-     <Route path="/bazar/1" element={<Bazar />} />
-     <Route path="/bazar/12" element={<Bazar />} />
-     <Route path="/bazar/25" element={<Bazar />} />
+    <Route path="/bazar/:id" element={<Informacoes />} />
      <Route path="/bazares/" element={<Bazares />} />
     </Routes>
   );
