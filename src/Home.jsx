@@ -37,8 +37,8 @@ export default function Home() {
                     <p>Lista Completa de Bazares em Curitiba </p>
                 </div>
 
-                <div className="flex justify-center items-center text-2xl mt-0 pb-5"><h2>Destaques</h2></div>
-                <div className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5''">
+                <div className="flex justify-center items-center text-2xl mt-0 pb-5 sm:flex"><h2>Destaques</h2></div>
+                <div className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5">
                     <Destaque onClick={() => navigate("/bazar/1")} img={amigos} titulo={destaque1.titulo} descricao={destaque1.descricao} />
                     <Destaque onClick={() => navigate("/bazar/12")}img={amizade} titulo={destaque2.titulo} descricao={destaque2.descricao} />
                     <Destaque onClick={() => navigate("/bazar/24")}img={nina} titulo={destaque3.titulo} descricao={destaque3.descricao} />

@@ -13,7 +13,7 @@ export default function Bazares() {
     }
 
     return (
-        <div className="min-h-screen pt-3 pl-5 flex flex-col gap-5 focus:flex-none focus:fixed focus:overflow-hidden">
+        <div className="min-h-screen pt-3 pl-5 flex flex-col gap-5  min-w-screen">
 
             <div className="flex items-center justify-between pr-10 ">
                 <button
@@ -29,13 +29,13 @@ export default function Bazares() {
                 </h1>
             </div>
 
-            <div className="flex flex-row justify-center pt-5 focus:overflow-hidden">
+            <div className="flex flex-row justify-center pt-5 focus:overflow-hidden ">
 
                 <div>
                     <input
                         type="text"
                         placeholder="Pesquise"
-                        className="h-10 w-100 border border-red-400 rounded-lg text-center focus:border-red-600 focus:outline-none pr-10 mr-3"
+                        className="h-10 w-100 border border-red-400 rounded-lg text-center focus:border-red-600 focus:outline-none pr-10 mr-3 hover:h-10 w-100"
                         onChange={(event) => {
 
                             const valorBusca = removeAccents(event.target.value.toLowerCase())
