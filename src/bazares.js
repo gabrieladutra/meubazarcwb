@@ -4,7 +4,7 @@ import adfp from "./assets/adfp.png"
 import acridas from "./assets/acridas.jpg"
 import apae from "./assets/apae.jpg"
 import afece from "./assets/afece.png"
-import amizade from "./assets/amizade.png"
+import amizade from "./assets/amizade.jpeg"
 import caritas from "./assets/caritas.jpg"
 import ceefa from "./assets/ceefa.png"
 import cabide from "./assets/cabide.jpg"
@@ -203,7 +203,7 @@ export const bazares = [
     fotos: carregarGaleria("provopar")
   },
   {
-    id: 18,
+    id: 17,
     titulo: "Bazar Instituto Grupo Solidário",
     descricao: "Rua Gabriel Frecceiro de Miranda, 621 – Xaxim",
     img: solidario,
@@ -213,16 +213,17 @@ export const bazares = [
     fotos: carregarGaleria("solidario")
   },
   {
-    id: 19,
+    id: 18,
     titulo: "Bazar Socorro aos Necessitados",
     descricao: "Rua Konrad Adenauer, 576 – Tarumã",
     img: socorro,
     horarios: "De terça a sexta-feira, das 9:30h às 15:30h.",
     contatos: "(41) 98898-2483",
+    saibaMais: "",
     fotos: carregarGaleria("socorro")
   },
   {
-    id: 20,
+    id: 19,
     titulo: "Bazar Lar Moisés",
     descricao: "Rua da Trindade, 1686 – Cajuru",
     img: moises,
@@ -232,7 +233,7 @@ export const bazares = [
     fotos: carregarGaleria("moises")
   },
   {
-    id: 21,
+    id: 20,
     titulo: "Achadinhos do Bazar Alcance Social",
     descricao: "Rua Tenente Miguel Afonso Ribeiro Cubas 210 - Capão Raso",
     img: alcance,
@@ -242,7 +243,7 @@ export const bazares = [
     fotos: carregarGaleria("alcance")
   },
   {
-    id: 22,
+    id: 21,
     titulo: "Bazar Associação São Roque",
     descricao: "Rua Nicarágua, 2128 – Bacacheri",
     img: saoroque,
@@ -252,7 +253,7 @@ export const bazares = [
     fotos: carregarGaleria("saoroque")
   },
   {
-    id: 23,
+    id: 22,
     titulo: "Bazar Associação dos Deficiente Físicos do Paraná",
     descricao: "R. XV de Novembro, 2765 - Alto da XV,",
     horarios: "De segunda á sexta das 8h ás 17h",
@@ -262,7 +263,7 @@ export const bazares = [
     fotos: carregarGaleria("adfp")
   },
    {
-    id: 24,
+    id: 23,
     titulo: "Bazar Cabide Solidário",
     img: cabide,
     descricao: "Rua General Carneiro, 06 - Alto da Glória",
@@ -273,7 +274,7 @@ export const bazares = [
 
   },
    {
-    id: 25,
+    id: 24,
     titulo: "Bazar Nina APACN",
     img: nina,
     descricao: "Rua Ubaldino do Amaral, 22 - Alto da Glória",

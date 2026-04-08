@@ -1,11 +1,12 @@
-import abibe from "./assets/ceai.jpg"
-import perpetuo from "./assets/perpetuo.png"
-import divino from "./assets/divino.jpeg"
+import amigos from "./assets/amigos.png"
+import nina from "./assets/nina.jpg"
+import amizade from "./assets/amizade.jpeg"
 import { useNavigate } from "react-router-dom"
+import {Informacoes} from "./Bazar.jsx"
 
-export function Destaque({ img, titulo, descricao }) {
+export function Destaque({onClick, img, titulo, descricao }) {
     return (
-        <div className="h-85 w-68 px-2 shadow-xl/30 shadow-grey-100/30 ring-8 ring-red-400/10 rounded-lg focus:outline-4 transition-transform duration-300 transform hover:-translate-y-6 text-black p-2 flex flex-col items-center justify-center">
+        <div onClick={onClick} className="h-85 w-68 px-2 shadow-xl/30 shadow-grey-100/30 ring-8 ring-red-400/10 rounded-lg focus:outline-4 transition-transform duration-300 transform hover:-translate-y-6 text-black p-2 flex flex-col items-center justify-center">
             <img src={img} alt={titulo} className="h-[200px] w-full object-cover" />
             <h3 className="text-red-400">{titulo}</h3>
             <p>{descricao}</p>
@@ -16,16 +17,16 @@ export function Destaque({ img, titulo, descricao }) {
 export default function Home() {
     const navigate = useNavigate()
     const destaque1 = {
-        "titulo": "Bazar Abibe Isfer",
-        "descricao": "Alameda Cabral, 275 - Centro, Curitiba - PR, 80410-210"
+        "titulo": "Bazar Desapega Amigos do HC",
+        "descricao": "Avenida Agostinho Leão Junior, 336 - Alto da Glória"
     }
     const destaque2 = {
-        "titulo": "Bazar Perpétuo Socorro",
-        "descricao": "Rua Ivo Leão, 220"
+        "titulo": "Bazar da Amizade - Hospital Pequeno Cotolengo",
+        "descricao": " Rua José Gonçalves Júnior, 140, Campo Comprido"
     }
     const destaque3 = {
-        "titulo": "Bazar Divino Espírito Santo",
-        "descricao": "R. Mateus Leme, 1855 - Bom Retiro, Curitiba - PR, 80520-174"
+        "titulo": "Bazar Nina APACN",
+        "descricao": "R. Rua Ubaldino do Amaral, 22 - Alto da Glória"
     }
     return (
         <>
@@ -37,10 +38,10 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center items-center text-2xl mt-0 pb-5"><h2>Destaques</h2></div>
-                <div onClick={() => navigate("/bazar/")} className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5''">
-                    <Destaque img={abibe} titulo={destaque1.titulo} descricao={destaque1.descricao} />
-                    <Destaque img={perpetuo} titulo={destaque2.titulo} descricao={destaque2.descricao} />
-                    <Destaque img={divino} titulo={destaque3.titulo} descricao={destaque3.descricao} />
+                <div className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5''">
+                    <Destaque onClick={() => navigate("/bazar/1")} img={amigos} titulo={destaque1.titulo} descricao={destaque1.descricao} />
+                    <Destaque onClick={() => navigate("/bazar/12")}img={amizade} titulo={destaque2.titulo} descricao={destaque2.descricao} />
+                    <Destaque onClick={() => navigate("/bazar/25")}img={nina} titulo={destaque3.titulo} descricao={destaque3.descricao} />
                 </div>
                 <div className="flex justify-center">
                     <button onClick={() => navigate("/bazares/")}

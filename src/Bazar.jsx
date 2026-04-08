@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"
 import { bazares } from "./bazares"
 import { MoveLeft } from "lucide-react"
 
-export function Informacoes({ bazar, img, fotos, saibaMais }) {
+export function Informacoes({ bazar }) {
 
   const responsive = {
     desktop: {
@@ -28,7 +28,7 @@ export function Informacoes({ bazar, img, fotos, saibaMais }) {
     <div className="text-2xl flex flex-col items-center gap-8">
 
       <img
-        src={img}
+        src={bazar.img}
         alt={bazar.titulo}
         className="h-[250px] w-[250px] object-cover rounded-lg shadow-md"
       />
@@ -43,7 +43,7 @@ export function Informacoes({ bazar, img, fotos, saibaMais }) {
         <li><strong>Contatos:</strong> {bazar.contatos}</li>
       </ul>
           <button
-            onClick={() => window.open(saibaMais, "_blank")}
+            onClick={() => window.open(bazar.saibaMais, "_blank")}
             className="text-red-400 text-base px-4 py-1 rounded-md hover:border-2 border-red-400 transition cursor-pointer"
           >
             Saiba Mais
@@ -65,7 +65,7 @@ export function Informacoes({ bazar, img, fotos, saibaMais }) {
           containerClass="w-full"
           itemClass="px-2"
         >
-          {fotos.map((foto, index) => (
+          {bazar.fotos.map((foto, index) => (
             <div key={index} className="flex justify-center">
               <img
                 src={foto}
@@ -107,12 +107,7 @@ export default function Bazar() {
           Voltar
         </button>
       </div>
-      <Informacoes
-        bazar={bazar}
-        img={bazar.img}
-        fotos={bazar.fotos}
-        saibaMais={bazar.saibaMais}
-      />
+      <Informacoes bazar={bazar} />
 
     </div>
   )

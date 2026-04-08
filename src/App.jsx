@@ -9,6 +9,9 @@ export default function App() {
     <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/bazar/:id" element={<Bazar />} />
+     <Route path="/bazar/1" element={<Bazar />} />
+     <Route path="/bazar/12" element={<Bazar />} />
+     <Route path="/bazar/25" element={<Bazar />} />
      <Route path="/bazares/" element={<Bazares />} />
     </Routes>
   );
