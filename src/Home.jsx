@@ -6,7 +6,7 @@ import {Informacoes} from "./Bazar.jsx"
 
 export function Destaque({onClick, img, titulo, descricao }) {
     return (
-        <div onClick={onClick} className="h-85 w-68 px-2 shadow-xl/30 shadow-grey-100/30 ring-8 ring-red-400/10 rounded-lg focus:outline-4 transition-transform duration-300 transform hover:-translate-y-6 text-black p-2 flex flex-col items-center justify-center">
+        <div onClick={onClick} className="w-full max-w-[300px] sm:w-68 px-2 shadow-xl/30 shadow-grey-100/30 ring-8 ring-red-400/10 rounded-lg focus:outline-4 transition-transform duration-300 transform hover:-translate-y-6 text-black p-2 flex flex-col items-center justify-center">
             <img src={img} alt={titulo} className="h-[200px] w-full object-cover" />
             <h3 className="text-red-400">{titulo}</h3>
             <p>{descricao}</p>
@@ -30,15 +30,14 @@ export default function Home() {
     }
     return (
         <>
-            <div className="w-full h-screen flex flex-col">
+            <div className="w-full h-dvh flex flex-col">
 
-                <div className="h-1/3 flex flex-col items-center justify-center text-red-400">
+                <div className="h-1/3 flex flex-col  items-center justify-center text-red-400">
                     <h1 className="text-4xl  text-semibold">MEU BAZAR CWB</h1>
                     <p>Lista Completa de Bazares em Curitiba </p>
                 </div>
-
-                <div className="flex justify-center items-center text-2xl mt-0 pb-5 sm:flex"><h2>Destaques</h2></div>
-                <div className="h-1/3 w-full flex items-center justify-center gap-5 cursor-pointer pt-5">
+                 <div className="flex justify-center items-center text-2xl mt-0 pb-5 "><h2>Destaques</h2></div>
+                <div className="w-full flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 pt-5">
                     <Destaque onClick={() => navigate("/bazar/1")} img={amigos} titulo={destaque1.titulo} descricao={destaque1.descricao} />
                     <Destaque onClick={() => navigate("/bazar/12")}img={amizade} titulo={destaque2.titulo} descricao={destaque2.descricao} />
                     <Destaque onClick={() => navigate("/bazar/24")}img={nina} titulo={destaque3.titulo} descricao={destaque3.descricao} />
