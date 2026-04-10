@@ -8,8 +8,8 @@ export function Destaque({ onClick, img, titulo, descricao }) {
   return (
     <div
       onClick={onClick}
-      className='shadow-grey-100/30 flex w-full max-w-[300px] transform flex-col items-center justify-center rounded-lg p-2 px-2 text-black shadow-xl/30 ring-8 ring-red-400/10 transition-transform duration-300 hover:-translate-y-6 focus:outline-4 sm:w-68'>
-      <img src={img} alt={titulo} className='h-[200px] w-full object-cover' />
+      className='shadow-grey-100/30 flex h-80 w-full max-w-75 flex-col items-center justify-between rounded-lg p-2 text-black shadow-xl/30 ring-8 ring-red-400/10 transition-transform duration-300 hover:-translate-y-6 sm:w-67.5'>
+      <img src={img} alt={titulo} className='h-50 w-full object-cover' />
       <h3 className='text-red-400'>{titulo}</h3>
       <p>{descricao}</p>
     </div>
@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <div className='flex h-dvh w-full flex-col'>
-        <div className='flex h-1/3 flex-col items-center justify-center text-red-400'>
+        <div className='flex h-1/3 flex-col items-center justify-between text-red-400'>
           <h1 className='text-semibold text-4xl'>MEU BAZAR CWB</h1>
           <p>Lista Completa de Bazares em Curitiba </p>
         </div>
@@ -63,7 +63,7 @@ export default function Home() {
         <div className='flex justify-center'>
           <button
             onClick={() => navigate('/bazares/')}
-            className='mmt-5 mt-5 flex h-11 cursor-pointer items-center gap-2 bg-red-400 px-4 text-white md:mt-10 md:mb-8 md:w-60 md:justify-center md:text-lg'>
+            className='mt-5 flex h-11 cursor-pointer items-center gap-2 bg-red-400 px-4 text-white md:mt-10 md:mb-8 md:w-60 md:justify-center md:text-lg'>
             Veja Mais
           </button>
         </div>

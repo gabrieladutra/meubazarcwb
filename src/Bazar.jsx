@@ -26,7 +26,7 @@ export function Informacoes({ bazar }) {
       <img
         src={bazar.img}
         alt={bazar.titulo}
-        className='h-[250px] w-[250px] rounded-lg object-cover shadow-md'
+        className='h-62.5 w-62.5 rounded-lg object-cover shadow-md'
       />
 
       <h2 className='text-sm font-semibold text-red-400 md:text-3xl'>{bazar.titulo}</h2>

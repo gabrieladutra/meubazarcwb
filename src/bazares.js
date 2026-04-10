@@ -11,7 +11,7 @@ import cabide from './assets/cabide.jpg'
 import divino from './assets/divino.jpg'
 import guardalupe from './assets/guardalupe.png'
 import hc from './assets/hc.png'
-import maos from './assets/maos.jpg'
+import maos from './assets/maos.jpeg'
 import perpetuo from './assets/perpetuo.png'
 import renal from './assets/renal.jpg'
 import santissimo from './assets/santissimo.jpg'
@@ -20,7 +20,7 @@ import provopar from './assets/provopar.jpg'
 import solidario from './assets/solidario.jpg'
 import nina from './assets/nina.jpg'
 import moises from './assets/moises.png'
-import alcance from './assets/alcance.png'
+import alcance from './assets/alcance.jpeg'
 import saoroque from './assets/saoroque.jpeg'
 
 function carregarGaleria(pasta) {
@@ -92,7 +92,7 @@ export const bazares = [
   },
   {
     id: 6,
-    titulo: 'Bazar Santuário Nosa Sra. de Guardalupe',
+    titulo: 'Bazar Santuário Nossa Sra. de Guardalupe',
     descricao: 'Praça Senador Correia, 128 - Centro',
     img: guardalupe,
     horarios: 'De segunda á sexta-feira das 9h30 ás 16h',
@@ -113,7 +113,7 @@ export const bazares = [
   },
   {
     id: 8,
-    titulo: 'Bazar da Associação Franciscana de Apoio ao Cidadão (AFECE)',
+    titulo: 'Bazar Associação Franciscana de Apoio ao Cidadão Especial (AFECE)',
     descricao: 'R. Paulo Turkiewicz, 316 - Tarumã',
     img: afece,
     horarios: ' De terça à sexta-feira das 10h as 16h - Almoço das 13h às 14h',
@@ -178,7 +178,7 @@ export const bazares = [
     titulo: 'Bazar CEEFA',
     descricao: 'Rua Prefeito Ângelo Ferrário Lopes , 1260 - Alto da XV',
     img: ceefa,
-    horarios: 'Consultar diretamente no telefone da CEEFA',
+    horarios: 'Consultar diretamente no telefone do CEEFA',
     contatos: '(41) 3264-2167',
     saibaMais: 'https://www.ceefa.org.br/bazar-solidario-doacao.html',
     fotos: carregarGaleria('ceefa')
@@ -188,7 +188,7 @@ export const bazares = [
     titulo: 'Bazar Fundação Pró-Renal',
     descricao: 'Avenida Vicente Machado, 2190 - Batel',
     img: renal,
-    horarios: 'De segunda à sexta das 8h às 17h',
+    horarios: 'De segunda à sexta-feira das 8h às 17h',
     contatos: '(41) 3312-5415',
     saibaMais: 'https://www.instagram.com/bazarprorenal/',
     fotos: carregarGaleria('prorenal')
@@ -238,7 +238,7 @@ export const bazares = [
     titulo: 'Achadinhos do Bazar Alcance Social',
     descricao: 'Rua Tenente Miguel Afonso Ribeiro Cubas 210 - Capão Raso',
     img: alcance,
-    horarios: 'De segunda à sexta das 9h às 17h. Consulte data  e local do Mega Bazar',
+    horarios: 'De segunda à sexta-feira das 9h às 17h. Consulte data  e local do Mega Bazar',
     contatos: '(41) 99131-5925',
     saibaMais: 'https://www.instagram.com/achadinhos.dobazar/',
     fotos: carregarGaleria('alcance')
@@ -257,7 +257,7 @@ export const bazares = [
     id: 22,
     titulo: 'Bazar Associação dos Deficiente Físicos do Paraná',
     descricao: 'R. XV de Novembro, 2765 - Alto da XV,',
-    horarios: 'De segunda á sexta das 8h ás 17h',
+    horarios: 'De segunda á sexta-feira das 8h ás 17h',
     contatos: 'adfp@adfp.org.br',
     saibaMais: 'https://adfp.org.br/',
     img: adfp,
@@ -278,7 +278,7 @@ export const bazares = [
     titulo: 'Bazar Nina APACN',
     img: nina,
     descricao: 'Rua Ubaldino do Amaral, 22 - Alto da Glória',
-    horarios: 'De segunda à sexta das 9h às 17h30.',
+    horarios: 'De segunda à sexta-feira das 9h às 17h30.',
     contatos: '11',
     saibaMais: 'https://www.instagram.com/bazarninaapacn/',
     fotos: carregarGaleria('nina')
