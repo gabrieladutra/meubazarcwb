@@ -184,7 +184,7 @@ export const bazares = [
   },
   {
     id: 15,
-    titulo: "Bazar Fundação \Pró-Renal",
+    titulo: "Bazar Fundação Pró-Renal",
     descricao: "Avenida Vicente Machado, 2190 - Batel",
     img: renal,
     horarios:"De segunda à sexta das 8h às 17h",

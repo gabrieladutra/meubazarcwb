@@ -49,7 +49,7 @@ export default function Home() {
                     </button>
 
                 </div>
-                <footer className="bg-red-400 h-5'"></footer>
+                <footer className="h-5 text-white flex text-center items-center"></footer>
 
             </div>
         </>

@@ -9,22 +9,22 @@ export default function Bazares() {
     const [listaDeBazares, setListaDeBazares] = useState(bazares)
 
     function removeAccents(str) {
-        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     }
 
     return (
         <div className="min-h-screen pt-3 pl-5 flex flex-col gap-5  min-w-screen">
 
-            <div className="flex items-center justify-between pr-10 ">
+            <div className="flex items-center justify-between md:pr-10">
                 <button
                     onClick={() => navigate("/")}
-                    className="bg-red-400 text-white h-11 px-4 flex items-center gap-2 cursor-pointer md:w-60 md:justify-center md:text-lg rounded"
+                    className="bg-red-400 text-white h-11 mpx-4 flex items-center gap-2 cursor-pointer w-60z md:justify-center md:text-lg sm:text-sm rounded"
                 >
                     <MoveLeft size={28} />
                     Voltar
                 </button>
 
-                <h1 className="text-3xl text-red-400 flex items-right flex-none">
+                <h1 className="md:text-3xl sm:text-sm text-red-400 flex items-right flex-none">
                     Todos os Bazares
                 </h1>
             </div>
@@ -35,7 +35,7 @@ export default function Bazares() {
                     <input
                         type="text"
                         placeholder="Pesquise"
-                        className="h-10 w-100 border border-red-400 rounded-lg text-center focus:border-red-600 focus:outline-none pr-10 mr-3 hover:h-10 w-100"
+                        className="h-10  w-64 md:w-100 border border-red-400 rounded-lg text-center focus:border-red-600 focus:outline-none pr-10 mr-3 hover:h-10"
                         onChange={(event) => {
 
                             const valorBusca = removeAccents(event.target.value.toLowerCase())
