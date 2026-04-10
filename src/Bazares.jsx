@@ -17,12 +17,12 @@ export default function Bazares() {
       <div className='flex items-center justify-between md:pr-10'>
         <button
           onClick={() => navigate('/')}
-          className='mpx-4 w-60z flex h-11 cursor-pointer items-center gap-2 rounded bg-red-400 text-white sm:text-sm md:justify-center md:text-lg'>
+          className='mpx-4 flex h-10 w-30 cursor-pointer items-center gap-5 rounded bg-red-400 pl-2 text-white sm:text-sm md:h-11 md:w-40 md:justify-center md:gap-2 md:pl-0 md:text-lg'>
           <MoveLeft size={28} />
           Voltar
         </button>
 
-        <h1 className='items-right flex flex-none text-red-400 sm:text-sm md:text-3xl'>
+        <h1 className='items-right flex flex-none pr-5 text-lg text-red-400 md:text-3xl'>
           Todos os Bazares
         </h1>
       </div>
@@ -32,7 +32,7 @@ export default function Bazares() {
           <input
             type='text'
             placeholder='Pesquise'
-            className='mr-3 h-10 w-64 rounded-lg border border-red-400 pr-10 text-center hover:h-10 focus:border-red-600 focus:outline-none md:w-100'
+            className='mr-3 h-10 w-64 items-center rounded-lg border border-red-400 pr-10 text-center hover:h-10 focus:border-red-600 focus:outline-none md:w-100'
             onChange={(event) => {
               const valorBusca = removeAccents(event.target.value.toLowerCase())
 
@@ -45,7 +45,7 @@ export default function Bazares() {
             }}
           />
         </div>
-        <div className='pt-2'>
+        <div className='cursor-pointer pt-2'>
           <Search size={22} color='#ff6467' />
         </div>
       </div>
