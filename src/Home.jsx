@@ -9,8 +9,8 @@ export function Destaque({ onClick, img, titulo, descricao }) {
     <div
       onClick={onClick}
       className='shadow-grey-100/30 flex h-80 w-full max-w-75 flex-col items-center justify-between rounded-lg p-2 text-black shadow-xl/30 ring-8 ring-red-400/10 transition-transform duration-300 hover:-translate-y-6 sm:w-67.5'>
-      <img src={img} alt={titulo} className='h-50 w-full object-cover' />
-      <h3 className='text-red-400'>{titulo}</h3>
+      <img src={img} alt={titulo} className='h-50 w-full rounded-md object-cover' />
+      <h3 className='line-clamp-2 text-center text-red-400'>{titulo}</h3>
       <p>{descricao}</p>
     </div>
   )

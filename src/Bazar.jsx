@@ -22,7 +22,7 @@ export function Informacoes({ bazar }) {
   }
 
   return (
-    <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-2xl md:gap-8 md:text-2xl'>
+    <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-xl md:gap-8 md:text-2xl'>
       <img
         src={bazar.img}
         alt={bazar.titulo}
