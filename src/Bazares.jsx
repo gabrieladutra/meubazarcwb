@@ -17,7 +17,7 @@ export default function Bazares() {
       <div className='flex items-center justify-between md:pr-10'>
         <button
           onClick={() => navigate('/')}
-          className='mpx-4 flex h-10 w-30 cursor-pointer items-center gap-5 rounded bg-red-400 pl-2 text-white sm:text-sm md:h-11 md:w-40 md:justify-center md:gap-2 md:pl-0 md:text-lg'>
+          className='mpx-4 flex h-10 w-30 cursor-pointer items-center gap-5 rounded border-none bg-red-400 pl-2 text-white sm:text-sm md:h-11 md:w-40 md:justify-center md:gap-2 md:pl-0 md:text-lg'>
           <MoveLeft size={28} />
           Voltar
         </button>
