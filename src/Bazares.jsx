@@ -27,7 +27,7 @@ export default function Bazares() {
         </h1>
       </div>
 
-      <div className='flex flex-row justify-center pt-5 focus:overflow-hidden'>
+      <div className='flex flex-row items-center justify-center pt-5 focus:overflow-hidden'>
         <div>
           <input
             type='text'
@@ -50,7 +50,7 @@ export default function Bazares() {
         </div>
       </div>
 
-      <div className='mt-5 ml-10 flex cursor-pointer flex-wrap gap-6 focus:fixed focus:flex-none'>
+      <div className='mt-5 ml-0 flex cursor-pointer flex-wrap gap-6 focus:fixed focus:flex-none md:ml-10'>
         {listaDeBazares.map((bazar) => (
           <div
             key={bazar.id}

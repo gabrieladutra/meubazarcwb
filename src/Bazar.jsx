@@ -22,16 +22,16 @@ export function Informacoes({ bazar }) {
   }
 
   return (
-    <div className='flex flex-col items-center gap-8 text-2xl'>
+    <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-2xl md:gap-8 md:text-2xl'>
       <img
         src={bazar.img}
         alt={bazar.titulo}
         className='h-[250px] w-[250px] rounded-lg object-cover shadow-md'
       />
 
-      <h2 className='text-3xl font-semibold text-red-400'>{bazar.titulo}</h2>
+      <h2 className='text-sm font-semibold text-red-400 md:text-3xl'>{bazar.titulo}</h2>
 
-      <ul className='text-left text-xl'>
+      <ul className='pl-4 text-left text-sm text-wrap md:pl-0 md:text-xl'>
         <li>
           <strong>Endereço:</strong> {bazar.descricao}
         </li>
@@ -48,7 +48,7 @@ export function Informacoes({ bazar }) {
         Saiba Mais
       </button>
 
-      <div className='w-full max-w-2xl'>
+      <div className='w-full sm:max-w-80 md:max-w-2xl'>
         <h2 className='mb-4 text-center text-2xl'>Galeria de Fotos</h2>
 
         <Carousel
@@ -94,7 +94,7 @@ export default function Bazar() {
 
   return (
     <div className='flex min-h-screen flex-col items-center px-4 pt-5'>
-      <div className='mb-6 flex w-full max-w-4xl justify-start'>
+      <div className='md:max-h-md max-h-sm mb-6 flex w-full max-w-24 justify-start md:max-w-2xl'>
         <button
           onClick={() => navigate('/bazares')}
           className='flex h-11 cursor-pointer items-center gap-2 rounded-md bg-red-400 px-6 text-center text-white transition hover:bg-red-500'>
