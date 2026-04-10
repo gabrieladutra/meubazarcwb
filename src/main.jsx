@@ -1,8 +1,8 @@
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
-import App from "./App.jsx";
-import "./App.css";
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import App from './App.jsx'
+import './App.css'
 
 const queryClient = new QueryClient()
 
@@ -13,4 +13,4 @@ createRoot(root).render(
       <App />
     </BrowserRouter>
   </QueryClientProvider>
-);
+)

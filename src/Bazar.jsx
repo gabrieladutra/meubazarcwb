@@ -1,12 +1,11 @@
-import { useNavigate } from "react-router-dom"
-import Carousel from "react-multi-carousel"
-import "react-multi-carousel/lib/styles.css"
-import { useParams } from "react-router-dom"
-import { bazares } from "./bazares"
-import { MoveLeft } from "lucide-react"
+import { useNavigate } from 'react-router-dom'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
+import { useParams } from 'react-router-dom'
+import { bazares } from './bazares'
+import { MoveLeft } from 'lucide-react'
 
 export function Informacoes({ bazar }) {
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -22,34 +21,35 @@ export function Informacoes({ bazar }) {
     }
   }
 
-
   return (
-    <div className="text-2xl flex flex-col items-center gap-8">
-
+    <div className='flex flex-col items-center gap-8 text-2xl'>
       <img
         src={bazar.img}
         alt={bazar.titulo}
-        className="h-[250px] w-[250px] object-cover rounded-lg shadow-md"
+        className='h-[250px] w-[250px] rounded-lg object-cover shadow-md'
       />
 
-      <h2 className="text-3xl text-red-400 font-semibold">
-        {bazar.titulo}
-      </h2>
+      <h2 className='text-3xl font-semibold text-red-400'>{bazar.titulo}</h2>
 
-      <ul className="text-xl text-left">
-        <li><strong>Endereço:</strong> {bazar.descricao}</li>
-        <li><strong>Horários:</strong> {bazar.horarios}</li>
-        <li><strong>Contatos:</strong> {bazar.contatos}</li>
+      <ul className='text-left text-xl'>
+        <li>
+          <strong>Endereço:</strong> {bazar.descricao}
+        </li>
+        <li>
+          <strong>Horários:</strong> {bazar.horarios}
+        </li>
+        <li>
+          <strong>Contatos:</strong> {bazar.contatos}
+        </li>
       </ul>
-          <button
-            onClick={() => window.open(bazar.saibaMais, "_blank")}
-            className="text-red-400 text-base px-4 py-1 rounded-md hover:border-2 border-red-400 transition cursor-pointer"
-          >
-            Saiba Mais
-          </button>
+      <button
+        onClick={() => window.open(bazar.saibaMais, '_blank')}
+        className='cursor-pointer rounded-md border-red-400 px-4 py-1 text-base text-red-400 transition hover:border-2'>
+        Saiba Mais
+      </button>
 
-      <div className="w-full max-w-2xl">
-        <h2 className="text-2xl mb-4 text-center">Galeria de Fotos</h2>
+      <div className='w-full max-w-2xl'>
+        <h2 className='mb-4 text-center text-2xl'>Galeria de Fotos</h2>
 
         <Carousel
           responsive={responsive}
@@ -61,26 +61,24 @@ export function Informacoes({ bazar }) {
           swipeable={true}
           draggable={true}
           showDots={true}
-          containerClass="w-full"
-          itemClass="px-2"
-        >
+          containerClass='w-full'
+          itemClass='px-2'>
           {bazar.fotos?.map((foto, index) => (
-            <div key={index} className="flex justify-center">
+            <div key={index} className='flex justify-center'>
               <img
                 src={foto}
                 alt={`foto-${index}`}
-                className="h-[250px] w-full max-w-[400px] object-cover rounded-lg shadow-lg"
+                className='h-[250px] w-full max-w-[400px] rounded-lg object-cover shadow-lg'
               />
-            </div>))}
+            </div>
+          ))}
         </Carousel>
-
       </div>
     </div>
   )
 }
 
 export default function Bazar() {
-
   const navigate = useNavigate()
   const parametros = useParams()
 
@@ -95,19 +93,16 @@ export default function Bazar() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center pt-5 px-4">
-
-      <div className="w-full max-w-4xl flex justify-start mb-6">
+    <div className='flex min-h-screen flex-col items-center px-4 pt-5'>
+      <div className='mb-6 flex w-full max-w-4xl justify-start'>
         <button
-          onClick={() => navigate("/bazares")}
-          className="bg-red-400 text-white h-11 px-6  gap-2 flex items-center cursor-pointer rounded-md hover:bg-red-500 transition text-center"
-        >
+          onClick={() => navigate('/bazares')}
+          className='flex h-11 cursor-pointer items-center gap-2 rounded-md bg-red-400 px-6 text-center text-white transition hover:bg-red-500'>
           <MoveLeft size={28} />
           Voltar
         </button>
       </div>
       <Informacoes bazar={bazar} />
-
     </div>
   )
 }
