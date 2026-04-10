@@ -2,14 +2,13 @@ import amigos from './assets/amigos.png'
 import nina from './assets/nina.jpg'
 import amizade from './assets/amizade.jpeg'
 import { useNavigate } from 'react-router-dom'
-import { Informacoes } from './Bazar.jsx'
 
 export function Destaque({ onClick, img, titulo, descricao }) {
   return (
     <div
       onClick={onClick}
-      className='shadow-grey-100/30 flex h-80 w-full max-w-75 flex-col items-center justify-between rounded-lg p-2 text-black shadow-xl/30 ring-8 ring-red-400/10 transition-transform duration-300 hover:-translate-y-6 sm:w-67.5'>
-      <img src={img} alt={titulo} className='h-50 w-full rounded-md object-cover' />
+      className='shadow-grey-100/30 flex h-80 w-full max-w-75 flex-col items-center justify-between rounded-lg p-2 text-black shadow-xl/30 ring-8 ring-red-400/10 transition-transform duration-300 hover:-translate-y-6 sm:w-67.5 md:justify-center'>
+      <img src={img} alt={titulo} className='h-50 w-full rounded-md bg-white object-contain' />
       <h3 className='line-clamp-2 text-center text-red-400'>{titulo}</h3>
       <p>{descricao}</p>
     </div>
@@ -33,11 +32,11 @@ export default function Home() {
   return (
     <>
       <div className='flex h-dvh w-full flex-col'>
-        <div className='flex h-1/3 flex-col items-center justify-between text-red-400'>
-          <h1 className='text-semibold text-4xl'>MEU BAZAR CWB</h1>
+        <div className='flex h-1/3 flex-col items-center justify-between text-red-400 md:justify-center'>
+          <h1 className='text-semibold mt-2 text-4xl md:mt-0'>MEU BAZAR CWB</h1>
           <p>Lista Completa de Bazares em Curitiba </p>
         </div>
-        <div className='mt-0 flex items-center justify-center pb-5 text-2xl'>
+        <div className='mt-3 flex items-center justify-center pb-5 text-2xl md:mt-0'>
           <h2>Destaques</h2>
         </div>
         <div className='flex w-full flex-col flex-wrap items-center justify-center gap-5 pt-5 sm:flex-row'>
