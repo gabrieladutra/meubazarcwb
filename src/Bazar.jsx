@@ -97,7 +97,7 @@ export default function Bazar() {
       <div className='md:max-h-md max-h-sm mb-6 flex w-full justify-start md:max-w-2xl'>
         <button
           onClick={() => navigate('/bazares')}
-          className='flex h-11 cursor-pointer items-center gap-2 rounded-md bg-red-400 px-6 text-center text-white transition hover:bg-red-500'>
+          className='ml-10 flex h-11 cursor-pointer items-center gap-2 rounded-md bg-red-400 px-6 text-center text-white transition hover:bg-red-500 md:ml-0'>
           <MoveLeft size={28} />
           Voltar
         </button>
