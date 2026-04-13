@@ -13,7 +13,7 @@ aws s3 rm s3://$BUCKET --recursive
 
 # 3) ENVIAR NOVO BUILD
 echo "Enviando novos arquivos..."
-aws s3 cp --acl public-read dist s3://$BUCKET --recursive
+aws s3 cp dist s3://$BUCKET --recursive
 
 # 4) INVALIDAR CLOUDFRONT
 echo "Invalidando CloudFront..."
