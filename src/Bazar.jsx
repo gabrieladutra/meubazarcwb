@@ -21,6 +21,29 @@ export function Informacoes({ bazar }) {
     }
   }
 
+  let map
+  let center = { lat: -25.4329311, lng: -49.278342 }
+
+  async function initMap() {
+    await google.maps.importLibrary('maps')
+    await google.maps.importLibrary('marker')
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center,
+      zoom: 8,
+      mapId: 'DEMO_MAP_ID'
+    })
+
+    addMarker()
+  }
+
+  async function addMarker() {
+    const marker = new google.maps.marker.AdvancedMarkerElement({
+      map,
+      position: center
+    })
+  }
+
   return (
     <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-xl md:gap-8 md:text-2xl'>
       <img
@@ -103,6 +126,7 @@ export default function Bazar() {
         </button>
       </div>
       <Informacoes bazar={bazar} />
+      {initMap()}
     </div>
   )
 }
