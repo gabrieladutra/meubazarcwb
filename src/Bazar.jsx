@@ -4,7 +4,17 @@ import 'react-multi-carousel/lib/styles.css'
 import { useParams } from 'react-router-dom'
 import { bazares } from './bazares'
 import { MoveLeft } from 'lucide-react'
+import { APIProvider, Map } from '@vis.gl/react-google-maps'
 
+export function Mapa({ key, position }) {
+  return (
+    <APIProvider apiKey={key}>
+      <div style={{ height: '100vh', width: '100%' }}>
+        <Map defaultCenter={position} defaultZoom={13} />
+      </div>
+    </APIProvider>
+  )
+}
 export function Informacoes({ bazar }) {
   const responsive = {
     desktop: {
@@ -19,29 +29,6 @@ export function Informacoes({ bazar }) {
       breakpoint: { max: 640, min: 0 },
       items: 1
     }
-  }
-
-  let map
-  let center = { lat: -25.4329311, lng: -49.278342 }
-
-  async function initMap() {
-    await google.maps.importLibrary('maps')
-    await google.maps.importLibrary('marker')
-
-    map = new google.maps.Map(document.getElementById('map'), {
-      center,
-      zoom: 8,
-      mapId: 'DEMO_MAP_ID'
-    })
-
-    addMarker()
-  }
-
-  async function addMarker() {
-    const marker = new google.maps.marker.AdvancedMarkerElement({
-      map,
-      position: center
-    })
   }
 
   return (
@@ -115,6 +102,9 @@ export default function Bazar() {
     return <h1>Bazar não encontrado</h1>
   }
 
+  const position = { lat: -25.4284, lng: -49.2733 }
+  const key = 'AIzaSyBLIlHjPWXQcffy0GLm8TCmXd2aFeB8tXI'
+
   return (
     <div className='flex min-h-screen flex-col items-center px-4 pt-5'>
       <div className='md:max-h-md max-h-sm mb-6 flex w-full justify-start md:max-w-2xl'>
@@ -126,7 +116,7 @@ export default function Bazar() {
         </button>
       </div>
       <Informacoes bazar={bazar} />
-      {initMap()}
+      <Mapa key={key} />
     </div>
   )
 }
