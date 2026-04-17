@@ -22,7 +22,6 @@ export default function Bazares() {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   }
   return (
-    /** flex w-full flex-col flex-wrap items-center justify-center gap-5 pt-5 sm:flex-row */
     <div className='flex min-h-screen min-w-screen flex-col gap-5 pt-3 pl-2 md:ml-0'>
       <div className='flex items-center justify-between md:pr-10'>
         <div>
