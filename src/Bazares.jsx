@@ -37,7 +37,7 @@ export default function Bazares() {
           <input
             type='text'
             placeholder='Pesquise'
-            className='mr-3 h-10 w-64 items-center rounded-lg border border-red-400 pr-10 text-center hover:h-10 focus:border-red-600 focus:outline-none md:w-100'
+            className='mr-3 h-10 w-64 items-center rounded-lg border border-red-400 text-center hover:h-10 focus:border-red-600 focus:outline-none md:w-100'
             onChange={(event) => {
               const valorBusca = removeAccents(event.target.value.toLowerCase())
 
