@@ -33,11 +33,7 @@ export function Informacoes({ bazar, apiKey, position }) {
 
   return (
     <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
-      <img
-        src={bazar.img}
-        alt={bazar.titulo}
-        className='h-62.5 w-62.5 rounded-lg bg-white object-contain shadow-md'
-      />
+      <img src={bazar.img} alt={bazar.titulo} className='h-62.5 w-62.5 rounded-lg bg-white object-contain shadow-md' />
 
       <h2 className='text-sm font-semibold text-red-400 md:text-3xl'>{bazar.titulo}</h2>
 
@@ -75,11 +71,7 @@ export function Informacoes({ bazar, apiKey, position }) {
           itemClass='px-2'>
           {bazar.fotos?.map((foto, index) => (
             <div key={index} className='flex justify-center'>
-              <img
-                src={foto}
-                alt={`foto-${index}`}
-                className='h-[250px] w-full max-w-[400px] rounded-lg bg-white object-contain shadow-lg'
-              />
+              <img src={foto} alt={`foto-${index}`} className='h-[250px] w-full max-w-[400px] rounded-lg bg-white object-contain shadow-lg' />
             </div>
           ))}
         </Carousel>
@@ -110,10 +102,10 @@ export default function Bazar() {
 
   return (
     <div className='flex min-h-screen flex-col items-center px-4 pt-5'>
-      <div className='md:max-h-md max-h-sm mb-6 flex w-full justify-start md:max-w-2xl'>
+      <div className='md:max-h-md max-h-sm mb-6 flex w-full justify-center md:max-w-2xl md:justify-start'>
         <button
           onClick={() => navigate('/bazares')}
-          className='ml-10 flex h-11 cursor-pointer items-center gap-2 rounded-md bg-red-400 px-6 text-center text-white transition hover:bg-red-500 md:ml-0'>
+          className='ml-0 flex h-11 cursor-pointer items-center gap-2 rounded-md bg-red-400 px-6 text-center text-white transition hover:bg-red-500 md:ml-10'>
           <MoveLeft size={28} />
           Voltar
         </button>

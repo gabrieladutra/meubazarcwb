@@ -4,6 +4,16 @@ import { Destaque } from './Home'
 import { useNavigate } from 'react-router-dom'
 import { Search, MoveLeft } from 'lucide-react'
 
+export function Voltar({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className='mpx-4 flex h-10 w-30 cursor-pointer items-center gap-5 rounded border-none bg-red-400 pl-2 text-white sm:text-sm md:h-11 md:w-40 md:justify-center md:gap-2 md:pl-0 md:text-lg'>
+      <MoveLeft size={28} />
+      Voltar
+    </button>
+  )
+}
 export default function Bazares() {
   const navigate = useNavigate()
   const [listaDeBazares, setListaDeBazares] = useState(bazares)
@@ -11,17 +21,13 @@ export default function Bazares() {
   function removeAccents(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   }
-
   return (
     /** flex w-full flex-col flex-wrap items-center justify-center gap-5 pt-5 sm:flex-row */
-    <div className='flex min-h-screen min-w-screen flex-col gap-5 pt-3 pl-5 md:ml-0'>
+    <div className='flex min-h-screen min-w-screen flex-col gap-5 pt-3 pl-2 md:ml-0'>
       <div className='flex items-center justify-between md:pr-10'>
-        <button
-          onClick={() => navigate('/')}
-          className='mpx-4 flex h-10 w-30 cursor-pointer items-center gap-5 rounded border-none bg-red-400 pl-2 text-white sm:text-sm md:h-11 md:w-40 md:justify-center md:gap-2 md:pl-0 md:text-lg'>
-          <MoveLeft size={28} />
-          Voltar
-        </button>
+        <div>
+          <Voltar onClick={() => navigate('/')} />
+        </div>
 
         <h1 className='items-right flex flex-none pr-5 text-lg text-red-400 md:text-3xl'>Todos os Bazares</h1>
       </div>
@@ -49,12 +55,15 @@ export default function Bazares() {
         </div>
       </div>
 
-      <div className='mt-5 ml-0 flex cursor-pointer flex-wrap justify-center gap-6 focus:fixed focus:flex-none md:ml-10'>
+      <div className='mt-5 ml-0 flex cursor-pointer flex-wrap justify-center gap-6 focus:fixed focus:flex-none md:ml-5'>
         {listaDeBazares.map((bazar) => (
           <div key={bazar.id} onClick={() => navigate(`/bazar/${bazar.id}`)} className='transform transition-transform duration-300 hover:-translate-y-2'>
             <Destaque img={bazar.img} titulo={bazar.titulo} descricao={bazar.descricao} />
           </div>
         ))}
+      </div>
+      <div className='sm:display-block ld:display-none xs:display- md:visibility-hidden flex justify-center md:hidden'>
+        <Voltar onClick={() => navigate('/')} />
       </div>
     </div>
   )
