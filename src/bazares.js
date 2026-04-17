@@ -105,8 +105,7 @@ export const bazares = [
     titulo: 'Bazar do Santíssimo',
     descricao: 'Rua Leôncio Correia, 381 - Água Verde',
     img: santissimo,
-    horarios:
-      'Ás terças e quintas-feiras, das 14h às 18h, e no 2º sábado de cada mês, a partir das 8h',
+    horarios: 'Ás terças e quintas-feiras, das 14h às 18h, e no 2º sábado de cada mês, a partir das 8h',
     contatos: '(41) 9324-2556',
     saibaMais: 'https://www.instagram.com/bazardosantissimo/',
     fotos: carregarGaleria('santissimo')
@@ -156,8 +155,7 @@ export const bazares = [
     titulo: 'Bazar da Amizade - Hospital Pequeno Cotolengo',
     descricao: 'Rua José Gonçalves Júnior, 140, Campo Comprido',
     img: amizade,
-    horarios:
-      'De segunda a sábado, das 8h30 às 11h30. 2° Sábado do mês tem bazar especial com horário estendido até às 13h',
+    horarios: 'De segunda a sábado, das 8h30 às 11h30. 2° Sábado do mês tem bazar especial com horário estendido até às 13h',
     contatos: '(41) 3314-1900',
     saibaMais: 'https://www.pequenocotolengo.org.br/bazar-da-amizade/',
     fotos: carregarGaleria('amizade')
