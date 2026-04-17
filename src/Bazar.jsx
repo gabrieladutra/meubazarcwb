@@ -6,16 +6,16 @@ import { bazares } from './bazares'
 import { MoveLeft } from 'lucide-react'
 import { APIProvider, Map } from '@vis.gl/react-google-maps'
 
-export function Mapa({ key, position }) {
+export function Mapa({ apiKey, position }) {
   return (
-    <APIProvider apiKey={key}>
+    <APIProvider apiKey={apiKey}>
       <div style={{ height: '100vh', width: '100%' }}>
         <Map defaultCenter={position} defaultZoom={13} />
       </div>
     </APIProvider>
   )
 }
-export function Informacoes({ bazar }) {
+export function Informacoes({ bazar, apiKey, position }) {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -32,7 +32,7 @@ export function Informacoes({ bazar }) {
   }
 
   return (
-    <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-xl md:gap-8 md:text-2xl'>
+    <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
       <img
         src={bazar.img}
         alt={bazar.titulo}
@@ -84,6 +84,9 @@ export function Informacoes({ bazar }) {
           ))}
         </Carousel>
       </div>
+      <div className='mt-6 h-[400px] w-full'>
+        <Mapa apiKey={apiKey} position={position} />
+      </div>
     </div>
   )
 }
@@ -102,8 +105,8 @@ export default function Bazar() {
     return <h1>Bazar não encontrado</h1>
   }
 
-  const position = { lat: -25.4284, lng: -49.2733 }
-  const key = 'AIzaSyBLIlHjPWXQcffy0GLm8TCmXd2aFeB8tXI'
+  const position = { lat: -25.4329247, lng: -49.2758622 }
+  const apiKey = 'AIzaSyD8HBqH4YmdiKH20eK-NnH9VNMisawXR6E'
 
   return (
     <div className='flex min-h-screen flex-col items-center px-4 pt-5'>
@@ -115,8 +118,7 @@ export default function Bazar() {
           Voltar
         </button>
       </div>
-      <Informacoes bazar={bazar} />
-      <Mapa key={key} />
+      <Informacoes bazar={bazar} apiKey={apiKey} position={position} />
     </div>
   )
 }
