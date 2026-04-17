@@ -32,16 +32,16 @@ export function Informacoes({ bazar, apiKey, position }) {
   }
 
   return (
-    <div className='flex max-w-80 flex-col items-center gap-2 overflow-hidden text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
+    <div className='flex max-w-80 flex-col items-center gap-2 text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
       <img src={bazar.img} alt={bazar.titulo} className='h-62.5 w-62.5 rounded-lg bg-white object-contain shadow-md' />
 
-      <h2 className='text-sm font-semibold text-red-400 md:text-3xl'>{bazar.titulo}</h2>
+      <h2 className='max-w-md justify-center text-sm font-semibold text-red-400 md:text-2xl'>{bazar.titulo}</h2>
 
-      <ul className='pl-4 text-left text-sm text-wrap md:pl-0 md:text-xl'>
+      <ul className='max-w-md pl-4 text-left text-sm md:text-xl'>
         <li>
           <strong>Endereço:</strong> {bazar.descricao}
         </li>
-        <li>
+        <li className='break-word leading-relaxed'>
           <strong>Horários:</strong> {bazar.horarios}
         </li>
         <li>
@@ -55,7 +55,7 @@ export function Informacoes({ bazar, apiKey, position }) {
       </button>
 
       <div className='w-full sm:max-w-80 md:max-w-2xl'>
-        <h2 className='mb-4 text-center text-2xl'>Galeria de Fotos</h2>
+        <h2 className='mb-2 text-center text-2xl'>Galeria de Fotos</h2>
 
         <Carousel
           responsive={responsive}
@@ -76,7 +76,7 @@ export function Informacoes({ bazar, apiKey, position }) {
           ))}
         </Carousel>
       </div>
-      <div className='mt-6 h-[400px] w-full'>
+      <div className='mt-2 min-h-75 w-full'>
         <Mapa apiKey={apiKey} position={position} />
       </div>
     </div>
