@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { bazares } from './bazares'
 import { MoveLeft } from 'lucide-react'
 import { APIProvider, Map } from '@vis.gl/react-google-maps'
+import { useGeolocation } from './Geolocation'
 
 export function Mapa({ apiKey, position }) {
   return (
@@ -98,6 +99,7 @@ export default function Bazar() {
   }
 
   const position = { lat: -25.4329247, lng: -49.2758622 }
+  //const apiKey = 'AIzaSyCIg9VmxBetV38F3Xg-g7s0lh3J359MRlI'
   const apiKey = 'AIzaSyD8HBqH4YmdiKH20eK-NnH9VNMisawXR6E'
 
   return (
