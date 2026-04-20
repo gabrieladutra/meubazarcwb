@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+/* import { useEffect, useState } from 'react'
 
 export default function handler() {
   const [location, setLocation] = useState(null)
@@ -18,4 +18,4 @@ export default function handler() {
   }, [])
 
   return location
-}
+} */
