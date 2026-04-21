@@ -4,13 +4,20 @@ import 'react-multi-carousel/lib/styles.css'
 import { useParams } from 'react-router-dom'
 import { bazares } from './bazares'
 import { MoveLeft } from 'lucide-react'
-import { APIProvider, Map } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
 
 export function Mapa({ apiKey, position }) {
   return (
     <APIProvider apiKey={apiKey}>
       <div style={{ height: '100vh', width: '100%' }}>
-        <Map defaultCenter={position} defaultZoom={13} />
+        <Map defaultCenter={position} defaultZoom={17}>
+          <Marker
+            position={position}
+            icon={{
+              src: './assets/pin.png'
+            }}
+          />
+        </Map>
       </div>
     </APIProvider>
   )
