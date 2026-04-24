@@ -43,242 +43,289 @@ export const bazares = [
   {
     id: 1,
     titulo: 'Bazar Desapega Amigos do HC',
-    descricao: 'Avenida Agostinho Leão Junior, 336 - Alto da Glória',
+    descricao: 'Avenida Agostinho Leão Junior, 336, Alto da Glória, Curitiba, PR, Brasil',
     img: hc,
     horarios: 'De segunda á sexta-feira, das 9h às 17h.',
     contatos: '(41) 98713-6516',
     saibaMais: 'https://www.amigosdohc.org.br/loja-2/',
-    fotos: carregarGaleria('hc')
+    fotos: carregarGaleria('hc'),
+    lat: -25.4216863,
+    lng: -49.261734
   },
   {
     id: 2,
     titulo: 'Bazar Perpétuo Socorro',
-    descricao: 'Rua Ivo Leão, 220 - Alto da Glória',
+    descricao: 'Rua Ivo Leão, 220, Alto da Glória, Curitiba, PR, Brasil',
     img: perpetuo,
     horarios: 'Ás quartas-feiras, das 8h às 17h ',
     contatos: '(41) 3253-2031',
     saibaMais: 'https://www.perpetuosocorro.org.br/pagina/bazar',
-    fotos: carregarGaleria('perpetuo')
+    fotos: carregarGaleria('perpetuo'),
+    lat: -25.4194442,
+    lng: -49.2625332
   },
   {
     id: 3,
     titulo: 'Bazar Divino Espírito Santo',
-    descricao: 'Rua Mateus Leme, 1855 - Bom Retiro',
+    descricao: 'Rua Mateus Leme, 1855, Bom Retiro, Curitiba, PR, Brasil',
     img: divino,
     horarios: 'Aos sábados das 8h às 12h',
-    contatos: '41) 3121-1754',
+    contatos: '(41) 3121-1754',
     saibaMais: 'https://www.facebook.com/pdescuritiba/',
-    fotos: carregarGaleria('divino')
+    fotos: carregarGaleria('divino'),
+    lat: -25.4110563,
+    lng: -49.2719837
   },
   {
     id: 4,
     titulo: 'Bazar da Cáritas',
-    descricao: 'Avenida Marechal Floriano Peixoto, 8520 - Boqueirão',
+    descricao: 'Avenida Marechal Floriano Peixoto, 8520, Boqueirão, Curitiba, PR, Brasil',
     img: caritas,
-    horarios: 'Organizado em datas esporádicas geralmente sextas e sábados das 9h às 17h',
+    horarios: 'Datas esporádicas',
     contatos: '(41) 3039-7869',
     saibaMais: 'https://www.instagram.com/caritaspr/',
-    fotos: carregarGaleria('caritas')
+    fotos: carregarGaleria('caritas'),
+    lat: -25.5006509,
+    lng: -49.2383283
   },
   {
     id: 5,
     titulo: 'Bazar Solidário Acridas',
-    descricao: 'Rua Eduardo Geronasso, 1782 - Bacacheri',
+    descricao: 'Rua Eduardo Geronasso, 1782, Bacacheri, Curitiba, PR, Brasil',
     img: acridas,
-    horarios: 'De segunda á sexta-feira das 9h às 11h30 e das 13h às 15h30.',
+    horarios: 'Segunda á sexta-feira',
     contatos: '(41) 98835-5238',
     saibaMais: 'https://www.instagram.com/acridasoficial/',
-    fotos: carregarGaleria('acridas')
+    fotos: carregarGaleria('acridas'),
+    lat: -25.3875366,
+    lng: -49.2314107
   },
   {
     id: 6,
-    titulo: 'Bazar Santuário Nossa Sra. de Guardalupe',
-    descricao: 'Praça Senador Correia, 128 - Centro',
+    titulo: 'Bazar Santuário Nossa Sra. de Guadalupe',
+    descricao: 'Praça Senador Correia, 128, Centro, Curitiba, PR, Brasil',
     img: guardalupe,
-    horarios: 'De segunda á sexta-feira das 9h30 ás 16h',
+    horarios: 'Segunda á sexta-feira',
     contatos: '(41) 3233-4884',
-    saibaMais: 'https://santuarioguadalupe.com.br/secretaria/avisos-do-santuario/',
-    fotos: carregarGaleria('guardalupe')
+    saibaMais: 'https://santuarioguadalupe.com.br/',
+    fotos: carregarGaleria('guardalupe'),
+    lat: -25.4323965,
+    lng: -49.2644023
   },
   {
     id: 7,
     titulo: 'Bazar do Santíssimo',
-    descricao: 'Rua Leôncio Correia, 381 - Água Verde',
+    descricao: 'Rua Leôncio Correia, 381, Água Verde, Curitiba, PR, Brasil',
     img: santissimo,
-    horarios: 'Ás terças e quintas-feiras, das 14h às 18h, e no 2º sábado de cada mês, a partir das 8h',
+    horarios: 'Terças e quintas',
     contatos: '(41) 9324-2556',
     saibaMais: 'https://www.instagram.com/bazardosantissimo/',
-    fotos: carregarGaleria('santissimo')
+    fotos: carregarGaleria('santissimo'),
+    lat: -25.4518,
+    lng: -49.29378
   },
   {
     id: 8,
-    titulo: 'Bazar Associação Franciscana de Apoio ao Cidadão Especial (AFECE)',
-    descricao: 'R. Paulo Turkiewicz, 316 - Tarumã',
+    titulo: 'Bazar AFECE',
+    descricao: 'Rua Paulo Turkiewicz, 316, Tarumã, Curitiba, PR, Brasil',
     img: afece,
-    horarios: ' De terça à sexta-feira das 10h as 16h - Almoço das 13h às 14h',
+    horarios: 'Terça à sexta',
     contatos: '(41) 3366-5212',
-    saibaMais: 'https://afece.org.br/bazar/',
-    fotos: carregarGaleria('afece')
+    saibaMais: 'https://afece.org.br/',
+    fotos: carregarGaleria('afece'),
+    lat: -25.4233817,
+    lng: -49.2133693
   },
   {
     id: 9,
-    titulo: 'Bazar Transformar (ABASC/PIB)',
-    descricao: ' Rua Bento Viana, 1200 - Batel',
+    titulo: 'Bazar Transformar',
+    descricao: 'Rua Bento Viana, 1200, Batel, Curitiba, PR, Brasil',
     img: abasc,
-    horarios: 'De quarta á sexta-feira das 9h às 15h e sábado das 10h às 13h',
+    horarios: 'Quarta à sábado',
     contatos: '(41) 99825-0600',
     saibaMais: 'https://www.instagram.com/bazar.transformar/',
-    fotos: carregarGaleria('abasc')
+    fotos: carregarGaleria('abasc'),
+    lat: -25.4422843,
+    lng: -49.2846434
   },
   {
     id: 10,
     titulo: 'Bazar APAE Curitiba',
-    descricao: 'Avenida Nossa Senhora da Paz, 1041 - Boqueirão',
+    descricao: 'Avenida Nossa Senhora da Paz, 1041, Boqueirão, Curitiba, PR, Brasil',
     img: apae,
-    horarios: 'Segunda, quarta e sexta-feira das 9h às 16h',
+    horarios: 'Seg, qua e sex',
     contatos: '(41) 99266-5857',
     saibaMais: 'https://www.instagram.com/bazarapaecuritiba/',
-    fotos: carregarGaleria('apae')
+    fotos: carregarGaleria('apae'),
+    lat: -25.5075205,
+    lng: -49.2283466
   },
   {
     id: 11,
-    titulo: 'Bazar Mãos que Valen',
-    descricao: 'Rua Paulo Gorski,1356 - Mossunguê',
+    titulo: 'Bazar Mãos que Valem',
+    descricao: 'Rua Paulo Gorski, 1356, Mossunguê, Curitiba, PR, Brasil',
     img: maos,
-    horarios: 'De segunda a sexta-feira das 9h30 às 17h30 Sábado das 10h às 15h',
+    horarios: 'Segunda à sábado',
     contatos: '(41) 9915-3616',
     saibaMais: 'https://www.instagram.com/bazar.transformar/',
-    fotos: carregarGaleria('maos')
+    fotos: carregarGaleria('maos'),
+    lat: -25.4424305,
+    lng: -49.3227962
   },
   {
     id: 12,
-    titulo: 'Bazar da Amizade - Hospital Pequeno Cotolengo',
-    descricao: 'Rua José Gonçalves Júnior, 140, Campo Comprido',
+    titulo: 'Bazar da Amizade',
+    descricao: 'Rua José Gonçalves Júnior, 140, Campo Comprido, Curitiba, PR, Brasil',
     img: amizade,
-    horarios: 'De segunda a sábado, das 8h30 às 11h30. 2° Sábado do mês tem bazar especial com horário estendido até às 13h',
+    horarios: 'Segunda à sábado',
     contatos: '(41) 3314-1900',
-    saibaMais: 'https://www.pequenocotolengo.org.br/bazar-da-amizade/',
-    fotos: carregarGaleria('amizade')
+    saibaMais: 'https://www.pequenocotolengo.org.br/',
+    fotos: carregarGaleria('amizade'),
+    lat: -25.4650885,
+    lng: -49.3271867
   },
-
   {
     id: 13,
     titulo: 'Bazar Abibe Isfer',
-    descricao: 'Alameda Cabral, 275 - Centro',
+    descricao: 'Alameda Cabral, 275, Centro, Curitiba, PR, Brasil',
     img: ceai,
-    horarios: 'Consultar diretamente no telefone do CEAI',
-    contatos: ' (41) 99506-0013',
+    horarios: 'Consultar',
+    contatos: '(41) 99506-0013',
     saibaMais: 'https://www.instagram.com/abibeisfer/',
-    fotos: carregarGaleria('ceai')
+    fotos: carregarGaleria('ceai'),
+    lat: -25.430639,
+    lng: -49.2777836
   },
   {
     id: 14,
     titulo: 'Bazar CEEFA',
-    descricao: 'Rua Prefeito Ângelo Ferrário Lopes , 1260 - Alto da XV',
+    descricao: 'Rua Prefeito Ângelo Ferrário Lopes, 1260, Alto da XV, Curitiba, PR, Brasil',
     img: ceefa,
-    horarios: 'Consultar diretamente no telefone do CEEFA',
+    horarios: 'Consultar',
     contatos: '(41) 3264-2167',
-    saibaMais: 'https://www.ceefa.org.br/bazar-solidario-doacao.html',
-    fotos: carregarGaleria('ceefa')
+    saibaMais: 'https://www.ceefa.org.br/',
+    fotos: carregarGaleria('ceefa'),
+    lat: -25.4237287,
+    lng: -49.2429142
   },
   {
     id: 15,
-    titulo: 'Bazar Fundação Pró-Renal',
-    descricao: 'Avenida Vicente Machado, 2190 - Batel',
+    titulo: 'Bazar Pró-Renal',
+    descricao: 'Avenida Vicente Machado, 2190, Batel, Curitiba, PR, Brasil',
     img: renal,
-    horarios: 'De segunda à sexta-feira das 8h às 17h',
+    horarios: 'Segunda à sexta',
     contatos: '(41) 3312-5415',
     saibaMais: 'https://www.instagram.com/bazarprorenal/',
-    fotos: carregarGaleria('prorenal')
+    fotos: carregarGaleria('prorenal'),
+    lat: -25.4408502,
+    lng: -49.297311
   },
   {
     id: 16,
     titulo: 'Bazar PROVOPAR',
-    descricao: 'Rua Hermes Fontes, 315 - Batel ',
+    descricao: 'Rua Hermes Fontes, 315, Batel, Curitiba, PR, Brasil',
     img: provopar,
-    horarios: 'De segunda a sexta-feira, das 10h às 17h',
+    horarios: 'Segunda à sexta',
     contatos: '(41) 99540-3998',
     saibaMais: 'https://www.instagram.com/provopar.oficial/',
-    fotos: carregarGaleria('provopar')
+    fotos: carregarGaleria('provopar'),
+    lat: -25.4433082,
+    lng: -49.2926164
   },
   {
     id: 17,
-    titulo: 'Bazar Instituto Grupo Solidário',
-    descricao: 'Rua Gabriel Frecceiro de Miranda, 621 – Xaxim',
+    titulo: 'Bazar Grupo Solidário',
+    descricao: 'Rua Gabriel Frecceiro de Miranda, 621, Xaxim, Curitiba, PR, Brasil',
     img: solidario,
-    horarios: 'Consultar data e horário diretamente no instagram do Instituto',
+    horarios: 'Consultar',
     contatos: '(41) 99751-2828',
     saibaMais: 'https://www.instagram.com/institutogruposolidario/',
-    fotos: carregarGaleria('solidario')
+    fotos: carregarGaleria('solidario'),
+    lat: -25.502107,
+    lng: -49.273077
   },
   {
     id: 18,
     titulo: 'Bazar Socorro aos Necessitados',
-    descricao: 'Rua Konrad Adenauer, 576 – Tarumã',
+    descricao: 'Rua Konrad Adenauer, 576, Tarumã, Curitiba, PR, Brasil',
     img: socorro,
-    horarios: 'De terça a sexta-feira, das 9:30h às 15:30h.',
+    horarios: 'Terça à sexta',
     contatos: '(41) 98898-2483',
     saibaMais: '',
-    fotos: carregarGaleria('socorro')
+    fotos: carregarGaleria('socorro'),
+    lat: -25.4250043,
+    lng: -49.2147635
   },
   {
     id: 19,
     titulo: 'Bazar Lar Moisés',
-    descricao: 'Rua da Trindade, 1686 – Cajuru',
+    descricao: 'Rua da Trindade, 1686, Cajuru, Curitiba, PR, Brasil',
     img: moises,
-    horarios: 'Acontece a cada 15 dias das 8h as 12h.',
-    contatos: '(41) 3256-5587 / (41) 99125-0559 / (41) 99176-0112',
-    saibaMais: 'https://larmoises.org/bazar/',
-    fotos: carregarGaleria('moises')
+    horarios: 'Quinzenal',
+    contatos: '(41) 3256-5587',
+    saibaMais: 'https://larmoises.org/',
+    fotos: carregarGaleria('moises'),
+    lat: -25.4580734,
+    lng: -49.20162
   },
   {
     id: 20,
-    titulo: 'Achadinhos do Bazar Alcance Social',
-    descricao: 'Rua Tenente Miguel Afonso Ribeiro Cubas 210 - Capão Raso',
+    titulo: 'Bazar Alcance Social',
+    descricao: 'Rua Tenente Miguel Afonso Ribeiro Cubas, 210, Capão Raso, Curitiba, PR, Brasil',
     img: alcance,
-    horarios: 'De segunda à sexta-feira das 9h às 17h. Consulte data  e local do Mega Bazar',
+    horarios: 'Segunda à sexta',
     contatos: '(41) 99131-5925',
     saibaMais: 'https://www.instagram.com/achadinhos.dobazar/',
-    fotos: carregarGaleria('alcance')
+    fotos: carregarGaleria('alcance'),
+    lat: -25.5011953,
+    lng: -49.2936834
   },
   {
     id: 21,
     titulo: 'Bazar Associação São Roque',
-    descricao: 'Rua Nicarágua, 2128 – Bacacheri',
+    descricao: 'Rua Nicarágua, 2128, Bacacheri, Curitiba, PR, Brasil',
     img: saoroque,
-    horarios: 'Ás terças e quintas-feiras das 08h30 ás 11h30 e das 13h30 ás 16h30',
+    horarios: 'Terça e quinta',
     contatos: '(41) 99224-6944',
     saibaMais: 'https://www.instagram.com/bazarsaoroque/',
-    fotos: carregarGaleria('saoroque')
+    fotos: carregarGaleria('saoroque'),
+    lat: -25.3936518,
+    lng: -49.2295171
   },
   {
     id: 22,
-    titulo: 'Bazar Associação dos Deficiente Físicos do Paraná',
-    descricao: 'R. XV de Novembro, 2765 - Alto da XV,',
-    horarios: 'De segunda á sexta-feira das 8h ás 17h',
+    titulo: 'Bazar ADFP',
+    descricao: 'Rua XV de Novembro, 2765, Alto da XV, Curitiba, PR, Brasil',
+    img: adfp,
+    horarios: 'Segunda à sexta',
     contatos: 'adfp@adfp.org.br',
     saibaMais: 'https://adfp.org.br/',
-    img: adfp,
-    fotos: carregarGaleria('adfp')
+    fotos: carregarGaleria('adfp'),
+    lat: -25.4270467,
+    lng: -49.2473584
   },
   {
     id: 23,
     titulo: 'Bazar Cabide Solidário',
+    descricao: 'Rua General Carneiro, 6, Alto da Glória, Curitiba, PR, Brasil',
     img: cabide,
-    descricao: 'Rua General Carneiro, 06 - Alto da Glória',
-    horarios: 'Todas as quartas das 9h às 17h.',
-    contatos: '(41)8457-2267',
+    horarios: 'Quartas',
+    contatos: '(41) 8457-2267',
     saibaMais: 'https://www.instagram.com/cabidesolidario.itmo/',
-    fotos: carregarGaleria('cabide')
+    fotos: carregarGaleria('cabide'),
+    lat: -25.4224003,
+    lng: -49.2646412
   },
   {
     id: 24,
     titulo: 'Bazar Nina APACN',
+    descricao: 'Rua Ubaldino do Amaral, 22, Alto da Glória, Curitiba, PR, Brasil',
     img: nina,
-    descricao: 'Rua Ubaldino do Amaral, 22 - Alto da Glória',
-    horarios: 'De segunda à sexta-feira das 9h às 17h30.',
-    contatos: '11',
+    horarios: 'Segunda à sexta',
+    contatos: '(41)',
     saibaMais: 'https://www.instagram.com/bazarninaapacn/',
-    fotos: carregarGaleria('nina')
+    fotos: carregarGaleria('nina'),
+    lat: -25.4213585,
+    lng: -49.2614711
   }
 ]
