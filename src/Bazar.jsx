@@ -21,11 +21,6 @@ export function Informacoes({ bazar, apiKey }) {
     }
   }
 
-  const position = {
-    lat: bazar.lat,
-    lng: bazar.lng
-  }
-
   return (
     <div className='flex max-w-80 flex-col items-center gap-2 text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
       <img src={bazar.img} alt={bazar.titulo} className='h-62.5 w-62.5 rounded-lg bg-white object-contain shadow-md' />
@@ -74,7 +69,7 @@ export function Informacoes({ bazar, apiKey }) {
       </div>
 
       <div className='mt-2 min-h-[300px] w-full'>
-        <Mapa apiKey={apiKey} position={position} />
+        <Mapa apiKey={apiKey} />
       </div>
     </div>
   )
