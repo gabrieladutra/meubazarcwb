@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 
 export default function Mapa({ apiKey }) {
   const center = {
-    lat: -25.4267652,
-    lng: -49.2797453
+    lat: 0,
+    lng: 0
   }
   const [userLocation, setUserLocation] = useState(center)
 
@@ -25,7 +25,8 @@ export default function Mapa({ apiKey }) {
       },
       (error) => {
         console.log('Erro ao pegar localização:', error)
-      }
+      },
+      {}
     )
   }, [])
 
