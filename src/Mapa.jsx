@@ -1,5 +1,19 @@
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, Marker, useMapsLibrary, useMap } from '@vis.gl/react-google-maps'
 import { useEffect, useState } from 'react'
+
+export function getRoutes() {
+  const map = useMap()
+  const routesLibrary = useMapsLibrary('routes')
+  const [routes, setRoutes] = useState(null)
+
+  useEffect(() => {
+    if (!routesLibrary || !map) return
+
+    setRoutes(new routesLibrary.DirectionsService())
+  }, [routesLibrary, map])
+
+  return routes
+}
 
 export default function Mapa({ apiKey }) {
   const center = {
