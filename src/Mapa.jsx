@@ -1,54 +1,51 @@
-import { APIProvider, Map, Marker, useMapsLibrary, useMap } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
 import { useEffect, useState } from 'react'
+import Rotas from './Rotas'
 
-export function getRoutes() {
-  const map = useMap()
-  const routesLibrary = useMapsLibrary('routes')
-  const [routes, setRoutes] = useState(null)
-
-  useEffect(() => {
-    if (!routesLibrary || !map) return
-
-    setRoutes(new routesLibrary.DirectionsService())
-  }, [routesLibrary, map])
-
-  return routes
-}
-
-export default function Mapa({ apiKey }) {
-  const center = {
-    lat: 0,
-    lng: 0
-  }
-  const [userLocation, setUserLocation] = useState(center)
+export default function Mapa({ apiKey, bazar }) {
+  const [userLocation, setUserLocation] = useState(null)
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      console.log('Erro de geolocation')
+      console.error('Geolocalização não suportada')
       return
     }
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const pos = {
+        setUserLocation({
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        }
-
-        setUserLocation(pos)
+        })
       },
       (error) => {
-        console.log('Erro ao pegar localização:', error)
+        console.error('Erro ao pegar localização:', error)
       },
-      {}
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      }
     )
   }, [])
 
+  if (!userLocation) {
+    return <p>Carregando mapa...</p>
+  }
+
+  const bazarLocation = {
+    lat: bazar.lat,
+    lng: bazar.lng
+  }
+
   return (
     <APIProvider apiKey={apiKey}>
-      <div className='h-[300px] w-full overflow-hidden rounded-lg'>
-        <Map defaultCenter={userLocation} defaultZoom={17}>
+      <div className='relative h-[300px] w-full overflow-hidden rounded-lg'>
+        <Map defaultCenter={userLocation} defaultZoom={14}>
           <Marker position={userLocation} />
+          <Marker position={bazarLocation} />
+
+          <Rotas bazarLocation={bazarLocation} />
         </Map>
       </div>
     </APIProvider>

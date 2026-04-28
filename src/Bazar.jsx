@@ -23,7 +23,7 @@ export function Informacoes({ bazar, apiKey }) {
 
   return (
     <div className='flex max-w-80 flex-col items-center gap-2 text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
-      <img src={bazar.img} alt={bazar.titulo} className='h-62.5 w-62.5 rounded-lg bg-white object-contain shadow-md' />
+      <img src={bazar.img} alt={bazar.titulo} className='h-64 w-64 rounded-lg bg-white object-contain shadow-md' />
 
       <h2 className='max-w-md justify-center text-sm font-semibold text-red-400 md:text-2xl'>{bazar.titulo}</h2>
 
@@ -31,7 +31,7 @@ export function Informacoes({ bazar, apiKey }) {
         <li>
           <strong>Endereço:</strong> {bazar.descricao}
         </li>
-        <li className='break-word leading-relaxed'>
+        <li className='leading-relaxed break-words'>
           <strong>Horários:</strong> {bazar.horarios}
         </li>
         <li>
@@ -40,7 +40,7 @@ export function Informacoes({ bazar, apiKey }) {
       </ul>
 
       <button
-        onClick={() => window.open(bazar.saibaMais, '_blank')}
+        onClick={() => window.open(bazar.saibaMais, '_blank', 'noopener,noreferrer')}
         className='cursor-pointer rounded-md border-red-400 px-4 py-1 text-base text-red-400 transition hover:border-2'>
         Saiba Mais
       </button>
@@ -61,7 +61,7 @@ export function Informacoes({ bazar, apiKey }) {
           containerClass='w-full'
           itemClass='px-2'>
           {bazar.fotos?.map((foto, index) => (
-            <div key={index} className='flex justify-center'>
+            <div key={foto} className='flex justify-center'>
               <img src={foto} alt={`foto-${index}`} className='h-[250px] w-full max-w-[400px] rounded-lg bg-white object-contain shadow-lg' />
             </div>
           ))}
@@ -69,7 +69,7 @@ export function Informacoes({ bazar, apiKey }) {
       </div>
 
       <div className='mt-2 min-h-[300px] w-full'>
-        <Mapa apiKey={apiKey} />
+        <Mapa bazar={bazar} apiKey={apiKey} />
       </div>
     </div>
   )
