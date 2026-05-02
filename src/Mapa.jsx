@@ -1,4 +1,4 @@
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, AdvancedMarker } from '@vis.gl/react-google-maps'
 import { useEffect, useState } from 'react'
 import Rotas from './Rotas'
 
@@ -16,7 +16,7 @@ export default function Mapa({ apiKey, bazar }) {
         })
       },
       (error) => {
-        console.error(error)
+        console.error('Erro ao obter localização:', error)
       }
     )
   }, [])
@@ -31,12 +31,13 @@ export default function Mapa({ apiKey, bazar }) {
   }
 
   return (
-    <APIProvider apiKey={apiKey} libraries={['routes', 'geometry']}>
+    <APIProvider apiKey={apiKey}>
       <div className='relative h-[300px] w-full overflow-hidden rounded-lg'>
-        <Map defaultCenter={userLocation} defaultZoom={14}>
-          <Marker position={userLocation} />
-          <Marker position={bazarLocation} />
-          <Rotas bazarLocation={bazarLocation} />
+        <Map defaultCenter={userLocation} defaultZoom={14} mapId='eae2b4d799b940eaf6611867'>
+          <AdvancedMarker position={userLocation} />
+          <AdvancedMarker position={bazarLocation} />
+
+          <Rotas userLocation={userLocation} bazarLocation={bazarLocation} />
         </Map>
       </div>
     </APIProvider>

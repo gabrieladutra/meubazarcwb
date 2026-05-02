@@ -1,66 +1,42 @@
-import { Polyline, useMap, useMapsLibrary } from '@vis.gl/react-google-maps'
+import { Polyline } from '@vis.gl/react-google-maps'
 import { useEffect, useState } from 'react'
 
-function Rotas({ bazarLocation }) {
-  const map = useMap()
-  const routesLibrary = useMapsLibrary('routes')
-  const geometryLibrary = useMapsLibrary('geometry')
-
+function Rotas({ userLocation, bazarLocation }) {
   const [routePath, setRoutePath] = useState([])
   const [duration, setDuration] = useState(null)
 
   useEffect(() => {
-    if (!map || !routesLibrary || !geometryLibrary || !bazarLocation) return
+    async function calcularRota() {
+      try {
+        const directionsService = new google.maps.DirectionsService()
 
-    const routeService = new routesLibrary.Route()
+        const result = await directionsService.route({
+          origin: userLocation,
+          destination: bazarLocation,
+          travelMode: google.maps.TravelMode.WALKING
+        })
 
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        try {
-          const result = await routeService.computeRoutes({
-            origin: {
-              location: {
-                latLng: {
-                  lat: position.coords.latitude,
-                  lng: position.coords.longitude
-                }
-              }
-            },
-            destination: {
-              location: {
-                latLng: {
-                  lat: bazarLocation.lat,
-                  lng: bazarLocation.lng
-                }
-              }
-            },
-            travelMode: 'WALK',
-            fields: ['routes.duration', 'routes.polyline.encodedPolyline']
-          })
+        if (result.routes?.length > 0) {
+          const route = result.routes[0]
 
-          if (result.routes?.length > 0) {
-            const route = result.routes[0]
+          setDuration(route.legs[0].duration.text)
 
-            setDuration(route.duration)
+          const path = route.overview_path.map((point) => ({
+            lat: point.lat(),
+            lng: point.lng()
+          }))
 
-            const decodedPath = google.maps.geometry.encoding.decodePath(route.polyline.encodedPolyline)
-
-            const path = decodedPath.map((point) => ({
-              lat: point.lat(),
-              lng: point.lng()
-            }))
-
-            setRoutePath(path)
-          }
-        } catch (error) {
-          console.error('Erro ao calcular rota:', error)
+          setRoutePath(path)
         }
-      },
-      (error) => {
-        console.error('Erro ao pegar geolocalização:', error)
+      } catch (error) {
+        console.error('Erro ao calcular rota:', error)
       }
-    )
-  }, [map, routesLibrary, geometryLibrary, bazarLocation])
+    }
+
+    if (userLocation && bazarLocation) {
+      calcularRota()
+    }
+  }, [userLocation, bazarLocation])
 
   return (
     <>
