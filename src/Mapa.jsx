@@ -1,45 +1,35 @@
-import { APIProvider, Map, AdvancedMarker } from '@vis.gl/react-google-maps'
-import { useEffect, useState } from 'react'
+import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps'
 import Rotas from './Rotas'
 
-export default function Mapa({ apiKey, bazar }) {
-  const [userLocation, setUserLocation] = useState(null)
-
-  useEffect(() => {
-    if (!navigator.geolocation) return
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setUserLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        })
-      },
-      (error) => {
-        console.error('Erro ao obter localização:', error)
-      }
-    )
-  }, [])
-
-  if (!userLocation) {
+export default function Mapa({ origem, destino }) {
+  if (!origem || !destino) {
     return <p>Carregando mapa...</p>
   }
 
-  const bazarLocation = {
-    lat: bazar.lat,
-    lng: bazar.lng
+  const origemFormatada = {
+    lat: Number(origem.latitude),
+    lng: Number(origem.longitude)
+  }
+
+  const destinoFormatado = {
+    lat: Number(destino.latitude),
+    lng: Number(destino.longitude)
   }
 
   return (
-    <APIProvider apiKey={apiKey}>
-      <div className='relative h-[300px] w-full overflow-hidden rounded-lg'>
-        <Map defaultCenter={userLocation} defaultZoom={14} mapId='eae2b4d799b940eaf6611867'>
-          <AdvancedMarker position={userLocation} />
-          <AdvancedMarker position={bazarLocation} />
+    <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+      <Map
+        defaultCenter={origemFormatada}
+        defaultZoom={15}
+        style={{
+          width: '100%',
+          height: '400px'
+        }}>
+        <Marker position={origemFormatada} />
+        <Marker position={destinoFormatado} />
 
-          <Rotas userLocation={userLocation} bazarLocation={bazarLocation} />
-        </Map>
-      </div>
+        <Rotas origem={origemFormatada} destino={destinoFormatado} />
+      </Map>
     </APIProvider>
   )
 }

@@ -1,50 +1,41 @@
-import { Polyline } from '@vis.gl/react-google-maps'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useMap } from '@vis.gl/react-google-maps'
 
-function Rotas({ userLocation, bazarLocation }) {
-  const [routePath, setRoutePath] = useState([])
-  const [duration, setDuration] = useState(null)
+export default function Rotas({ origem, destino }) {
+  const map = useMap()
 
   useEffect(() => {
+    if (!map || !origem || !destino) return
+
     async function calcularRota() {
       try {
         const directionsService = new google.maps.DirectionsService()
 
-        const result = await directionsService.route({
-          origin: userLocation,
-          destination: bazarLocation,
+        const directionsRenderer = new google.maps.DirectionsRenderer({
+          suppressMarkers: true
+        })
+
+        directionsRenderer.setMap(map)
+
+        const resultado = await directionsService.route({
+          origin: origem,
+          destination: destino,
           travelMode: google.maps.TravelMode.WALKING
         })
 
-        if (result.routes?.length > 0) {
-          const route = result.routes[0]
+        directionsRenderer.setDirections(resultado)
 
-          setDuration(route.legs[0].duration.text)
+        const rota = resultado.routes[0].legs[0]
 
-          const path = route.overview_path.map((point) => ({
-            lat: point.lat(),
-            lng: point.lng()
-          }))
-
-          setRoutePath(path)
-        }
+        console.log('Distância:', rota.distance.text)
+        console.log('Duração:', rota.duration.text)
       } catch (error) {
         console.error('Erro ao calcular rota:', error)
       }
     }
 
-    if (userLocation && bazarLocation) {
-      calcularRota()
-    }
-  }, [userLocation, bazarLocation])
+    calcularRota()
+  }, [map, origem, destino])
 
-  return (
-    <>
-      {routePath.length > 0 && <Polyline path={routePath} />}
-
-      {duration && <div className='absolute top-2 left-2 rounded bg-white p-2 shadow'>Tempo a pé: {duration}</div>}
-    </>
-  )
+  return null
 }
-
-export default Rotas
