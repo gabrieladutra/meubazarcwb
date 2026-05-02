@@ -6,29 +6,21 @@ export default function Mapa({ origem, destino }) {
     return <p>Carregando mapa...</p>
   }
 
-  const origemFormatada = {
-    lat: Number(origem.latitude),
-    lng: Number(origem.longitude)
-  }
-
-  const destinoFormatado = {
-    lat: Number(destino.latitude),
-    lng: Number(destino.longitude)
-  }
-
   return (
-    <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+    <APIProvider apiKey={'AIzaSyD8HBqH4YmdiKH20eK-NnH9VNMisawXR6E'}>
       <Map
-        defaultCenter={origemFormatada}
+        defaultCenter={origem}
         defaultZoom={15}
+        gestureHandling='greedy'
+        fullscreenControl={false}
         style={{
           width: '100%',
           height: '400px'
         }}>
-        <Marker position={origemFormatada} />
-        <Marker position={destinoFormatado} />
+        <Marker position={origem} />
+        <Marker position={destino} />
 
-        <Rotas origem={origemFormatada} destino={destinoFormatado} />
+        <Rotas origem={origem} destino={destino} />
       </Map>
     </APIProvider>
   )

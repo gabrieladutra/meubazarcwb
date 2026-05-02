@@ -28,6 +28,7 @@ export default function Rotas({ origem, destino }) {
         const rota = resultado.routes[0].legs[0]
 
         console.log('Distância:', rota.distance.text)
+
         console.log('Duração:', rota.duration.text)
       } catch (error) {
         console.error('Erro ao calcular rota:', error)

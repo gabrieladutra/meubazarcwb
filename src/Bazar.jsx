@@ -5,7 +5,7 @@ import { bazares } from './bazares'
 import { MoveLeft } from 'lucide-react'
 import Mapa from './Mapa'
 
-export function Informacoes({ bazar, apiKey }) {
+export function Informacoes({ bazar }) {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -21,6 +21,16 @@ export function Informacoes({ bazar, apiKey }) {
     }
   }
 
+  const origem = {
+    lat: -25.4148608,
+    lng: -49.2568576
+  }
+
+  const destino = {
+    lat: Number(bazar.lat),
+    lng: Number(bazar.lng)
+  }
+
   return (
     <div className='flex max-w-80 flex-col items-center gap-2 text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
       <img src={bazar.img} alt={bazar.titulo} className='h-64 w-64 rounded-lg bg-white object-contain shadow-md' />
@@ -31,9 +41,11 @@ export function Informacoes({ bazar, apiKey }) {
         <li>
           <strong>Endereço:</strong> {bazar.descricao}
         </li>
-        <li className='leading-relaxed break-words'>
+
+        <li className='wrap-break-words leading-relaxed'>
           <strong>Horários:</strong> {bazar.horarios}
         </li>
+
         <li>
           <strong>Contatos:</strong> {bazar.contatos}
         </li>
@@ -50,14 +62,14 @@ export function Informacoes({ bazar, apiKey }) {
 
         <Carousel
           responsive={responsive}
-          infinite={true}
-          autoPlay={true}
+          infinite
+          autoPlay
           autoPlaySpeed={3000}
-          keyBoardControl={true}
+          keyBoardControl
           transitionDuration={500}
-          swipeable={true}
-          draggable={true}
-          showDots={true}
+          swipeable
+          draggable
+          showDots
           containerClass='w-full'
           itemClass='px-2'>
           {bazar.fotos?.map((foto, index) => (
@@ -69,7 +81,7 @@ export function Informacoes({ bazar, apiKey }) {
       </div>
 
       <div className='mt-2 min-h-[300px] w-full'>
-        <Mapa bazar={bazar} apiKey={apiKey} />
+        <Mapa origem={origem} destino={destino} />
       </div>
     </div>
   )
@@ -84,8 +96,6 @@ export default function Bazar() {
   if (!bazar) {
     return <h1>Bazar não encontrado</h1>
   }
-  //const apiKey = 'AIzaSyCIg9VmxBetV38F3Xg-g7s0lh3J359MRlI'
-  const apiKey = 'AIzaSyD8HBqH4YmdiKH20eK-NnH9VNMisawXR6E'
 
   return (
     <div className='flex min-h-screen flex-col items-center px-4 pt-5'>
@@ -98,7 +108,7 @@ export default function Bazar() {
         </button>
       </div>
 
-      <Informacoes bazar={bazar} apiKey={apiKey} />
+      <Informacoes bazar={bazar} />
     </div>
   )
 }
