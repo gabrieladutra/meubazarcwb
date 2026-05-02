@@ -4,35 +4,38 @@ import { useEffect, useState } from 'react'
 function Rotas({ bazarLocation }) {
   const map = useMap()
   const routesLibrary = useMapsLibrary('routes')
+  const geometryLibrary = useMapsLibrary('geometry')
 
   const [routePath, setRoutePath] = useState([])
   const [duration, setDuration] = useState(null)
 
   useEffect(() => {
-    if (!map || !routesLibrary || !bazarLocation) return
+    if (!map || !routesLibrary || !geometryLibrary || !bazarLocation) return
+
+    const routeService = new routesLibrary.Route()
 
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         try {
-          const result = await routesLibrary.Route.computeRoutes({
+          const result = await routeService.computeRoutes({
             origin: {
               location: {
                 latLng: {
-                  latitude: position.coords.latitude,
-                  longitude: position.coords.longitude
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
                 }
               }
             },
             destination: {
               location: {
                 latLng: {
-                  latitude: bazarLocation.lat,
-                  longitude: bazarLocation.lng
+                  lat: bazarLocation.lat,
+                  lng: bazarLocation.lng
                 }
               }
             },
-            travelMode: google.maps.TravelMode.WALKING,
-            fields: ['routes.duration', 'routes.polyline']
+            travelMode: 'WALK',
+            fields: ['routes.duration', 'routes.polyline.encodedPolyline']
           })
 
           if (result.routes?.length > 0) {
@@ -55,14 +58,9 @@ function Rotas({ bazarLocation }) {
       },
       (error) => {
         console.error('Erro ao pegar geolocalização:', error)
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0
       }
     )
-  }, [map, routesLibrary, bazarLocation])
+  }, [map, routesLibrary, geometryLibrary, bazarLocation])
 
   return (
     <>

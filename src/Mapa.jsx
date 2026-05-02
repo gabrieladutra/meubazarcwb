@@ -6,10 +6,7 @@ export default function Mapa({ apiKey, bazar }) {
   const [userLocation, setUserLocation] = useState(null)
 
   useEffect(() => {
-    if (!navigator.geolocation) {
-      console.error('Geolocalização não suportada')
-      return
-    }
+    if (!navigator.geolocation) return
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -19,12 +16,7 @@ export default function Mapa({ apiKey, bazar }) {
         })
       },
       (error) => {
-        console.error('Erro ao pegar localização:', error)
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0
+        console.error(error)
       }
     )
   }, [])
@@ -39,12 +31,11 @@ export default function Mapa({ apiKey, bazar }) {
   }
 
   return (
-    <APIProvider apiKey={apiKey}>
+    <APIProvider apiKey={apiKey} libraries={['routes', 'geometry']}>
       <div className='relative h-[300px] w-full overflow-hidden rounded-lg'>
         <Map defaultCenter={userLocation} defaultZoom={14}>
           <Marker position={userLocation} />
           <Marker position={bazarLocation} />
-
           <Rotas bazarLocation={bazarLocation} />
         </Map>
       </div>
