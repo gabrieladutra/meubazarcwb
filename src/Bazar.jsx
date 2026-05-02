@@ -5,7 +5,7 @@ import { bazares } from './bazares'
 import { MoveLeft } from 'lucide-react'
 import Mapa from './Mapa'
 
-export function Informacoes({ bazar }) {
+export function Informacoes({ bazar, apiKey }) {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -21,28 +21,18 @@ export function Informacoes({ bazar }) {
     }
   }
 
-  const origem = {
-    lat: -25.4148608,
-    lng: -49.2568576
-  }
-
-  const destino = {
-    lat: Number(bazar.lat),
-    lng: Number(bazar.lng)
-  }
-
   return (
     <div className='flex max-w-80 flex-col items-center gap-2 text-sm md:max-w-7xl md:gap-8 md:text-2xl'>
       <img src={bazar.img} alt={bazar.titulo} className='h-64 w-64 rounded-lg bg-white object-contain shadow-md' />
 
-      <h2 className='max-w-md justify-center text-sm font-semibold text-red-400 md:text-2xl'>{bazar.titulo}</h2>
+      <h2 className='max-w-md text-sm font-semibold text-red-400 md:text-2xl'>{bazar.titulo}</h2>
 
       <ul className='max-w-md pl-4 text-left text-sm md:text-xl'>
         <li>
           <strong>Endereço:</strong> {bazar.descricao}
         </li>
 
-        <li className='wrap-break-words leading-relaxed'>
+        <li className='leading-relaxed break-words'>
           <strong>Horários:</strong> {bazar.horarios}
         </li>
 
@@ -80,8 +70,8 @@ export function Informacoes({ bazar }) {
         </Carousel>
       </div>
 
-      <div className='mt-2 min-h-[300px] w-full'>
-        <Mapa origem={origem} destino={destino} />
+      <div className='mt-2 min-h-[400px] w-full'>
+        <Mapa bazar={bazar} apiKey={apiKey} />
       </div>
     </div>
   )
@@ -93,13 +83,16 @@ export default function Bazar() {
 
   const bazar = bazares.find((b) => b.id === Number(id))
 
+  //const apiKey = 'AIzaSyCIg9VmxBetV38F3Xg-g7s0lh3J359MRlI'
+  const apiKey = 'AIzaSyD8HBqH4YmdiKH20eK-NnH9VNMisawXR6E'
+
   if (!bazar) {
     return <h1>Bazar não encontrado</h1>
   }
 
   return (
     <div className='flex min-h-screen flex-col items-center px-4 pt-5'>
-      <div className='md:max-h-md max-h-sm mb-6 flex w-full justify-center md:max-w-2xl md:justify-start'>
+      <div className='mb-6 flex w-full justify-center md:max-w-2xl md:justify-start'>
         <button
           onClick={() => navigate('/bazares')}
           className='ml-0 flex h-11 cursor-pointer items-center gap-2 rounded-md bg-red-400 px-6 text-white transition hover:bg-red-500 md:ml-10'>
@@ -108,7 +101,7 @@ export default function Bazar() {
         </button>
       </div>
 
-      <Informacoes bazar={bazar} />
+      <Informacoes bazar={bazar} apiKey={apiKey} />
     </div>
   )
 }

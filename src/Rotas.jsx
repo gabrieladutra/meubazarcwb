@@ -1,21 +1,45 @@
-import { useEffect } from 'react'
-import { useMap } from '@vis.gl/react-google-maps'
+import { useEffect, useState } from 'react'
+import { AdvancedMarker, Polyline, useMap } from '@vis.gl/react-google-maps'
 
-export default function Rotas({ origem, destino }) {
+export default function Rotas({ destino }) {
   const map = useMap()
 
+  const [origem, setOrigem] = useState(null)
+  const [rota, setRota] = useState([])
+  const [destinoCoords, setDestinoCoords] = useState(null)
+
   useEffect(() => {
-    if (!map || !origem || !destino) return
+    if (!navigator.geolocation) {
+      console.error('Geolocalização não suportada')
+      return
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const localAtual = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }
+
+        console.log('Localização usuário:', localAtual)
+
+        setOrigem(localAtual)
+      },
+      (error) => {
+        console.error('Erro ao obter localização:', error)
+      },
+      {
+        enableHighAccuracy: true
+      }
+    )
+  }, [])
+
+  useEffect(() => {
+    if (!origem || !destino || !map) return
 
     async function calcularRota() {
       try {
         const directionsService = new google.maps.DirectionsService()
-
-        const directionsRenderer = new google.maps.DirectionsRenderer({
-          suppressMarkers: true
-        })
-
-        directionsRenderer.setMap(map)
 
         const resultado = await directionsService.route({
           origin: origem,
@@ -23,20 +47,41 @@ export default function Rotas({ origem, destino }) {
           travelMode: google.maps.TravelMode.WALKING
         })
 
-        directionsRenderer.setDirections(resultado)
+        const leg = resultado.routes[0].legs[0]
 
-        const rota = resultado.routes[0].legs[0]
+        const rotaPath = resultado.routes[0].overview_path.map((point) => ({
+          lat: point.lat(),
+          lng: point.lng()
+        }))
 
-        console.log('Distância:', rota.distance.text)
+        const destinoFinal = leg.end_location
 
-        console.log('Duração:', rota.duration.text)
+        setDestinoCoords({
+          lat: destinoFinal.lat(),
+          lng: destinoFinal.lng()
+        })
+
+        setRota(rotaPath)
+
+        map.fitBounds(resultado.routes[0].bounds)
+
+        console.log('Distância:', leg.distance.text)
+        console.log('Duração:', leg.duration.text)
       } catch (error) {
         console.error('Erro ao calcular rota:', error)
       }
     }
 
     calcularRota()
-  }, [map, origem, destino])
+  }, [origem, destino, map])
 
-  return null
+  return (
+    <>
+      {origem && <AdvancedMarker position={origem} />}
+
+      {destinoCoords && <AdvancedMarker position={destinoCoords} />}
+
+      {rota.length > 0 && <Polyline path={rota} />}
+    </>
+  )
 }
