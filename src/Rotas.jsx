@@ -7,6 +7,8 @@ export default function Rotas({ destino }) {
   const [origem, setOrigem] = useState(null)
   const [rota, setRota] = useState([])
   const [destinoCoords, setDestinoCoords] = useState(null)
+  const [distancia, setDistancia] = useState('')
+  const [duracao, setDuracao] = useState('')
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -21,7 +23,8 @@ export default function Rotas({ destino }) {
           lng: position.coords.longitude
         }
 
-        console.log('Localização usuário:', localAtual)
+        console.log('Precisão (metros):', position.coords.accuracy)
+        console.log('Localização:', localAtual)
 
         setOrigem(localAtual)
       },
@@ -29,7 +32,9 @@ export default function Rotas({ destino }) {
         console.error('Erro ao obter localização:', error)
       },
       {
-        enableHighAccuracy: true
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 0
       }
     )
   }, [])
@@ -65,8 +70,8 @@ export default function Rotas({ destino }) {
 
         map.fitBounds(resultado.routes[0].bounds)
 
-        console.log('Distância:', leg.distance.text)
-        console.log('Duração:', leg.duration.text)
+        setDistancia(leg.distance.text)
+        setDuracao(leg.duration.text)
       } catch (error) {
         console.error('Erro ao calcular rota:', error)
       }
@@ -77,6 +82,18 @@ export default function Rotas({ destino }) {
 
   return (
     <>
+      {distancia && (
+        <div className='absolute top-2 left-2 z-10 rounded-lg bg-white p-3 shadow-md'>
+          <p>
+            <strong>Distância:</strong> {distancia}
+          </p>
+
+          <p>
+            <strong>Tempo:</strong> {duracao}
+          </p>
+        </div>
+      )}
+
       {origem && <AdvancedMarker position={origem} />}
 
       {destinoCoords && <AdvancedMarker position={destinoCoords} />}
