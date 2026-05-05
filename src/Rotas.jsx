@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { CarFront, Bus, Footprints } from 'lucide-react'
 import { AdvancedMarker, Polyline, useMap } from '@vis.gl/react-google-maps'
 
 export default function Rotas({ destino }) {
@@ -7,8 +8,11 @@ export default function Rotas({ destino }) {
   const [origem, setOrigem] = useState(null)
   const [rota, setRota] = useState([])
   const [destinoCoords, setDestinoCoords] = useState(null)
+
   const [distancia, setDistancia] = useState('')
-  const [duracao, setDuracao] = useState('')
+  const [tempoWalking, setTempoWalking] = useState('')
+  const [tempoDriving, setTempoDriving] = useState('')
+  const [tempoTransit, setTempoTransit] = useState('')
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -18,15 +22,10 @@ export default function Rotas({ destino }) {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const localAtual = {
+        setOrigem({
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        }
-
-        console.log('Precisão (metros):', position.coords.accuracy)
-        console.log('Localização:', localAtual)
-
-        setOrigem(localAtual)
+        })
       },
       (error) => {
         console.error('Erro ao obter localização:', error)
@@ -40,26 +39,39 @@ export default function Rotas({ destino }) {
   }, [])
 
   useEffect(() => {
-    if (!origem || !destino || !map) return
+    if (!origem || !destino || !map || !window.google) return
 
-    async function calcularRota() {
+    async function calcularRotas() {
       try {
         const directionsService = new google.maps.DirectionsService()
 
-        const resultado = await directionsService.route({
-          origin: origem,
-          destination: destino,
-          travelMode: google.maps.TravelMode.WALKING
-        })
+        const [walking, driving, transit] = await Promise.all([
+          directionsService.route({
+            origin: origem,
+            destination: destino,
+            travelMode: google.maps.TravelMode.WALKING
+          }),
 
-        const leg = resultado.routes[0].legs[0]
+          directionsService.route({
+            origin: origem,
+            destination: destino,
+            travelMode: google.maps.TravelMode.DRIVING
+          }),
 
-        const rotaPath = resultado.routes[0].overview_path.map((point) => ({
+          directionsService.route({
+            origin: origem,
+            destination: destino,
+            travelMode: google.maps.TravelMode.TRANSIT
+          })
+        ])
+
+        // rota exibida no mapa (walking)
+        const rotaPath = walking.routes[0].overview_path.map((point) => ({
           lat: point.lat(),
           lng: point.lng()
         }))
 
-        const destinoFinal = leg.end_location
+        const destinoFinal = walking.routes[0].legs[0].end_location
 
         setDestinoCoords({
           lat: destinoFinal.lat(),
@@ -68,29 +80,44 @@ export default function Rotas({ destino }) {
 
         setRota(rotaPath)
 
-        map.fitBounds(resultado.routes[0].bounds)
+        map.fitBounds(walking.routes[0].bounds)
 
-        setDistancia(leg.distance.text)
-        setDuracao(leg.duration.text)
+        // distância
+        setDistancia(walking.routes[0].legs[0].distance.text)
+
+        // tempos
+        setTempoWalking(walking.routes[0].legs[0].duration.text)
+        setTempoDriving(driving.routes[0].legs[0].duration.text)
+        setTempoTransit(transit.routes[0].legs[0].duration.text)
       } catch (error) {
-        console.error('Erro ao calcular rota:', error)
+        console.error('Erro ao calcular rotas:', error)
       }
     }
 
-    calcularRota()
+    calcularRotas()
   }, [origem, destino, map])
 
   return (
     <>
       {distancia && (
-        <div className='absolute top-2 left-2 z-10 rounded-lg bg-white p-3 shadow-md'>
-          <p>
+        <div className='flex flex-wrap items-center gap-4 sm:text-xs md:text-lg'>
+          <button className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
             <strong>Distância:</strong> {distancia}
-          </p>
+          </button>
 
-          <p>
-            <strong>Tempo:</strong> {duracao}
-          </p>
+          <button className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
+            <Footprints />
+            {tempoWalking}
+          </button>
+
+          <button className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
+            <CarFront />
+            {tempoDriving}
+          </button>
+
+          <button className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
+            <Bus /> {tempoTransit}
+          </button>
         </div>
       )}
 
