@@ -32,7 +32,7 @@ export function Informacoes({ bazar, apiKey }) {
           <strong>Endereço:</strong> {bazar.descricao}
         </li>
 
-        <li className='leading-relaxed break-words'>
+        <li className='wrap-break-words leading-relaxed'>
           <strong>Horários:</strong> {bazar.horarios}
         </li>
 
@@ -64,13 +64,13 @@ export function Informacoes({ bazar, apiKey }) {
           itemClass='px-2'>
           {bazar.fotos?.map((foto, index) => (
             <div key={foto} className='flex justify-center'>
-              <img src={foto} alt={`foto-${index}`} className='h-[250px] w-full max-w-[400px] rounded-lg bg-white object-contain shadow-lg' />
+              <img src={foto} alt={`foto-${index}`} className='h-62.5 w-full max-w-100 rounded-lg bg-white object-contain shadow-lg' />
             </div>
           ))}
         </Carousel>
       </div>
 
-      <div className='mt-2 min-h-[400px] w-full'>
+      <div className='mt-2 min-h-100 w-full'>
         <Mapa bazar={bazar} apiKey={apiKey} />
       </div>
     </div>
