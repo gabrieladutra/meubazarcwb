@@ -97,6 +97,10 @@ export default function Rotas({ destino }) {
     calcularRotas()
   }, [origem, destino, map])
 
+  const trajetoApe = `https://www.google.com/maps/dir/?api=1&origin=${origem}&destination=${destino}&travelmode=walking`
+  const trajetoCarro = `https://www.google.com/maps/dir/?api=1&origin=${origem}&destination=${destino}&travelmode=driving`
+  const trajetoOnibus = `https://www.google.com/maps/dir/?api=1&origin=${origem}&destination=${destino}&travelmode=transit`
+
   return (
     <>
       {distancia && (
@@ -105,17 +109,21 @@ export default function Rotas({ destino }) {
             <strong>Distância:</strong> {distancia}
           </button>
 
-          <button className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
+          <button onClick={() => window.open(trajetoApe, '_blank')} className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
             <Footprints />
             {tempoWalking}
           </button>
 
-          <button className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
+          <button
+            onClick={() => window.open(trajetoCarro, '_blank')}
+            className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
             <CarFront />
             {tempoDriving}
           </button>
 
-          <button className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
+          <button
+            onClick={() => window.open(trajetoOnibus, '_blank')}
+            className='flex h-10 cursor-pointer items-center gap-2 rounded bg-red-400 px-4 text-white'>
             <Bus /> {tempoTransit}
           </button>
         </div>
