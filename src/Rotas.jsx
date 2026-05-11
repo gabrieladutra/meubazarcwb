@@ -97,9 +97,16 @@ export default function Rotas({ destino }) {
     calcularRotas()
   }, [origem, destino, map])
 
-  const trajetoApe = `https://www.google.com/maps/dir/?api=1&origin=${origem}&destination=${destino}&travelmode=walking`
-  const trajetoCarro = `https://www.google.com/maps/dir/?api=1&origin=${origem}&destination=${destino}&travelmode=driving`
-  const trajetoOnibus = `https://www.google.com/maps/dir/?api=1&origin=${origem}&destination=${destino}&travelmode=transit`
+  console.log('Origem: ', origem)
+  console.log('Destino: ', destino)
+
+  const trajetoApe = `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=walking`
+  const trajetoCarro = `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=driving`
+  const trajetoOnibus = `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=transit`
+
+  console.log('TrajetoApe: ', trajetoApe)
+  console.log('TrajetoCarro: ', trajetoCarro)
+  console.log('TrajetoOnibus: ', trajetoOnibus)
 
   return (
     <>
