@@ -97,16 +97,20 @@ export default function Rotas({ destino }) {
     calcularRotas()
   }, [origem, destino, map])
 
-  console.log('Origem: ', origem)
-  console.log('Destino: ', destino)
+  const trajetoApe =
+    origem && destinoCoords
+      ? `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=walking`
+      : ''
 
-  const trajetoApe = `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=walking`
-  const trajetoCarro = `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=driving`
-  const trajetoOnibus = `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=transit`
+  const trajetoCarro =
+    origem && destinoCoords
+      ? `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=driving`
+      : ''
 
-  console.log('TrajetoApe: ', trajetoApe)
-  console.log('TrajetoCarro: ', trajetoCarro)
-  console.log('TrajetoOnibus: ', trajetoOnibus)
+  const trajetoOnibus =
+    origem && destinoCoords
+      ? `https://www.google.com/maps/dir/?api=1&origin=${origem.lat},${origem.lng}&destination=${destinoCoords.lat},${destinoCoords.lng}&travelmode=transit`
+      : ''
 
   return (
     <>
