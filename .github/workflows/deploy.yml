@@ -1,18 +1,26 @@
 name: Deploy
 
+permissions:
+  contents: read
+
 on:
   push:
     tags:
       - v*
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Clone Repository
+        uses: actions/checkout@v6
+
       - name: Hello World
         shell: bash
         run: |
           echo "Hello World"
+          ls
 
       - name: Hello World2
         shell: bash
