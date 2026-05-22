@@ -22,7 +22,9 @@ jobs:
           echo "Hello World"
           ls
 
-      - name: Hello World2
-        shell: bash
-        run: |
-          echo "Hello World2"
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v6.1.0
+        with:
+          audience: sts.amazonaws.com
+          aws-region: sa-east-1
+          role-to-assume: arn:aws:iam::924568413237:role/githubActionsPermissions
