@@ -17,15 +17,15 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v6
 
-      - name: Hello World
-        shell: bash
-        run: |
-          echo "Hello World"
-          ls
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v6.1.0
         with:
           audience: sts.amazonaws.com
           aws-region: sa-east-1
           role-to-assume: arn:aws:iam::924568413237:role/githubActionsPermissions
+
+      - name: Deploy
+        shell: bash
+        run: |
+          npm install
+          ./deploy.sh
