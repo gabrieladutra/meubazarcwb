@@ -1,0 +1,20 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        shell: bash
+        run: |
+          echo "Hello World"
+
+      - name: Hello World2
+        shell: bash
+        run: |
+          echo "Hello World2"
