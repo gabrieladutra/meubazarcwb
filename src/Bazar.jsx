@@ -84,9 +84,9 @@ export default function Bazar() {
   const bazar = bazares.find((b) => b.id === Number(id))
 
   // API do DEPLOY
-  //const apiKey = 'AIzaSyCIg9VmxBetV38F3Xg-g7s0lh3J359MRlI'
+  const apiKey = 'AIzaSyCIg9VmxBetV38F3Xg-g7s0lh3J359MRlI'
 
-  const apiKey = 'AIzaSyD8HBqH4YmdiKH20eK-NnH9VNMisawXR6E'
+  //const apiKey = 'AIzaSyD8HBqH4YmdiKH20eK-NnH9VNMisawXR6E'
 
   if (!bazar) {
     return <h1>Bazar não encontrado</h1>
